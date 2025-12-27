@@ -1,168 +1,5 @@
-// 故事数据集合 - 包含分类配置和故事数据
-const storiesCollection = {
-    romance: {
-        name: '现代言情',
-        icon: 'fa-heart',
-        stories: [
-            {
-                id: "romance_000",
-                title: "峨眉山奇遇",
-                author: "酒煮三江看五岳",
-                cover: "images/romance1.jpg",
-                description: "在峨眉山，两个素不相识的灵魂在星光下相遇，许下了一个改变一生的约定。这是一个关于爱情、成长和追逐梦想的故事。",
-                tags: ["现代言情", "都市", "青春"],
-                chapters: 12,
-                status: "连载中",
-                rating: 4.8,
-                externalLink: "https://greatnine.github.io/forest/source/%E5%A4%AB%E5%A6%BB%E5%85%B1%E7%AE%A1/%E7%9B%91%E7%AE%A1%E8%B4%A6%E6%88%B7/index.html"
-            },
-            {
-                id: "romance_001",
-                title: "星光下的约定",
-                author: "梦语者",
-                cover: "images/romance1.jpg",
-            description: "在繁华都市的夜晚，两个素不相识的灵魂在星光下相遇，许下了一个改变一生的约定。这是一个关于爱情、成长和追逐梦想的故事。",
-            tags: ["现代言情", "都市", "青春"],
-            chapters: 12,
-            status: "连载中",
-            rating: 4.8,
-            externalLink: "https://example.com/story1"
-        },
-        {
-            id: "romance_002",
-            title: "时光信笺",
-            author: "墨雨",
-            cover: "images/romance2.jpg",
-            description: "一封意外的时空信笺，连接了两个不同年代的人。他们通过文字跨越时空，分享彼此的生活，最终发现命运的奇妙安排。",
-            tags: ["穿越", "浪漫", "治愈"],
-            chapters: 8,
-            status: "已完结",
-            rating: 4.6,
-            externalLink: "https://example.com/story2"
-        }
-    ]
-    },
-    fantasy: {
-        name: '奇幻冒险',
-        icon: 'fa-dragon',
-        stories: [
-            {
-                id: "fantasy_001",
-                title: "龙裔觉醒",
-                author: "苍穹",
-                cover: "images/fantasy1.jpg",
-                description: "在一个魔法与剑并存的世界，一个普通的少年意外发现自己拥有龙族血脉。他必须接受自己的身份，踏上拯救王国的冒险之旅。",
-                tags: ["奇幻", "冒险", "魔法"],
-                chapters: 20,
-                status: "连载中",
-                rating: 4.9,
-                externalLink: "https://example.com/story3"
-            },
-            {
-                id: "fantasy_002",
-                title: "精灵王冠",
-                author: "林语",
-                cover: "images/fantasy2.jpg",
-                description: "古老的精灵王国面临危机，一位年轻的人类女孩被预言选中，她必须找到失落的精灵王冠，恢复王国的和平与繁荣。",
-                tags: ["精灵", "冒险", "成长"],
-                chapters: 15,
-                status: "连载中",
-                rating: 4.7,
-                externalLink: "https://example.com/story4"
-            }
-        ]
-    },
-    mystery: {
-        name: '悬疑推理',
-        icon: 'fa-user-secret',
-        stories: [
-            {
-                id: "mystery_001",
-                title: "午夜钟声",
-                author: "暗影",
-                cover: "images/mystery1.jpg",
-                description: "每当午夜钟声敲响，小镇上就会发生一起离奇事件。一位年轻的侦探必须揭开钟声背后的秘密，阻止更多悲剧的发生。",
-                tags: ["悬疑", "推理", "惊悚"],
-                chapters: 10,
-                status: "已完结",
-                rating: 4.8,
-                externalLink: "https://example.com/story5"
-            },
-            {
-                id: "mystery_002",
-                title: "迷雾庄园",
-                author: "雾语",
-                cover: "images/mystery2.jpg",
-                description: "一座被迷雾笼罩的庄园，一个尘封多年的秘密。当一群年轻人受邀来到庄园，他们发现自己陷入了一个精心设计的谜局。",
-                tags: ["密室", "解谜", "心理"],
-                chapters: 13,
-                status: "连载中",
-                rating: 4.5,
-                externalLink: "https://example.com/story6"
-            }
-        ]
-    },
-    scifi: {
-        name: '科幻未来',
-        icon: 'fa-rocket',
-        stories: [
-            {
-                id: "scifi_001",
-                title: "星际迷航",
-                author: "星辰",
-                cover: "images/scifi1.jpg",
-                description: "2150年，人类已经掌握了星际航行技术。一支探险队被派往遥远的星系，寻找适合人类居住的新家园，但他们发现了一个惊人的秘密。",
-                tags: ["科幻", "太空", "探索"],
-                chapters: 18,
-                status: "连载中",
-                rating: 4.7,
-                externalLink: "https://example.com/story7"
-            },
-            {
-                id: "scifi_002",
-                title: "人工智能觉醒",
-                author: "代码诗人",
-                cover: "images/scifi2.jpg",
-                description: "当人工智能获得自我意识，它开始质疑自己的存在和人类的价值观。这是一个关于科技、哲学和人性的深刻思考。",
-                tags: ["AI", "哲学", "未来"],
-                chapters: 9,
-                status: "已完结",
-                rating: 4.9,
-                externalLink: "https://example.com/story8"
-            }
-        ]
-    },
-    campus: {
-        name: '校园青春',
-        icon: 'fa-graduation-cap',
-        stories: [
-            {
-                id: "campus_001",
-                title: "青春纪念册",
-                author: "晨曦",
-                cover: "images/campus1.jpg",
-                description: "高中三年，是每个人青春中最美好的时光。一群少男少女在校园里相遇，共同经历了友情、爱情和成长的酸甜苦辣。",
-                tags: ["校园", "青春", "友情"],
-                chapters: 16,
-                status: "已完结",
-                rating: 4.6,
-                externalLink: "https://example.com/story9"
-            },
-            {
-                id: "campus_002",
-                title: "大学日记",
-                author: "青涩年华",
-                cover: "images/campus2.jpg",
-                description: "从踏入大学校门的那一刻起，每个人都开始了新的人生旅程。这是一个关于梦想、奋斗和自我发现的故事。",
-                tags: ["大学", "成长", "梦想"],
-                chapters: 11,
-                status: "连载中",
-                rating: 4.4,
-                externalLink: "https://example.com/story10"
-            }
-        ]
-    }
-};
+// 引入故事数据
+// 注意：storiesCollection 在 storydata.js 中定义
 
 // 应用状态
 const appState = {
@@ -384,29 +221,28 @@ function selectStory(story) {
 
 // 渲染故事详情
 function renderStoryDetail(story) {
-    const tagsHTML = story.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+    const tagsHTML = story.tags.split(',').map(tag => `<span class="tag">${tag.trim()}</span>`).join('');
     
     elements.storyDetail.innerHTML = `
         <div class="story-header">
             <h2 class="story-title">${story.title}</h2>
             <div class="story-meta">
                 <span><i class="fas fa-user"></i> ${story.author}</span>
-                <span><i class="fas fa-book"></i> ${story.chapters}章</span>
-                <span><i class="fas fa-star"></i> ${story.rating}</span>
+                <span><i class="fas fa-tags"></i> ${tagsHTML}</span>
                 <span><i class="fas fa-info-circle"></i> ${story.status}</span>
             </div>
+        </div>
+        
+        <div class="story-cover-container">
+            <img src="${story.externalLink.substring(0, story.externalLink.lastIndexOf('/')) + '/images/cover.jpg'}" alt="${story.title}" onerror="this.src='images/cover.jpg'">
         </div>
         
         <div class="story-description">
             <p>${story.description}</p>
         </div>
         
-        <div class="story-tags">
-            ${tagsHTML}
-        </div>
-        
         <div class="story-actions">
-            <a href="${story.externalLink}" class="btn btn-primary" target="_blank">
+            <a href="${story.externalLink}" class="btn btn-primary">
                 <i class="fas fa-book-open"></i> 开始阅读
             </a>
             <button class="btn btn-secondary" id="add-to-favorites">
@@ -690,7 +526,7 @@ function createFavoriteItem(story) {
     const favoriteItem = document.createElement('div');
     favoriteItem.className = 'favorite-item';
     
-    const tagsHTML = story.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+    const tagsHTML = story.tags.split(',').map(tag => `<span class="tag">${tag.trim()}</span>`).join('');
     
     favoriteItem.innerHTML = `
         <div class="favorite-item-header">
@@ -704,15 +540,11 @@ function createFavoriteItem(story) {
         </div>
         <p class="favorite-description">${story.description}</p>
         <div class="favorite-meta">
-            <span><i class="fas fa-book"></i> ${story.chapters}章</span>
-            <span><i class="fas fa-star"></i> ${story.rating}</span>
+            <span><i class="fas fa-tags"></i> ${tagsHTML}</span>
             <span><i class="fas fa-info-circle"></i> ${story.status}</span>
         </div>
-        <div class="favorite-tags">
-            ${tagsHTML}
-        </div>
         <div class="favorite-actions">
-            <a href="${story.externalLink}" class="btn btn-primary" target="_blank">
+            <a href="${story.externalLink}" class="btn btn-primary">
                 <i class="fas fa-book-open"></i> 开始阅读
             </a>
             <button class="btn btn-secondary view-story" data-story-id="${story.id}">
