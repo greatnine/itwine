@@ -255,6 +255,11 @@ function renderStoryDetail(story) {
     const favoriteBtn = document.getElementById('add-to-favorites');
     if (favoriteBtn) {
         favoriteBtn.addEventListener('click', () => addToFavorites(story));
+        // 添加触摸事件支持，确保在移动设备上正常工作
+        favoriteBtn.addEventListener('touchend', (e) => {
+            e.preventDefault(); // 防止触摸事件触发两次点击
+            addToFavorites(story);
+        });
     }
     
     // 更新收藏按钮状态
@@ -314,6 +319,11 @@ function addToFavorites(story) {
             // 更新收藏按钮状态
             updateFavoriteButton();
             updateFavoritesButton();
+            
+            // 如果当前在收藏页面，重新渲染收藏列表
+            if (appState.currentView === 'favorites') {
+                renderFavoritesList();
+            }
             
             // 显示提示消息
             showToast('已添加到收藏');
@@ -556,15 +566,32 @@ function createFavoriteItem(story) {
     // 添加事件监听器
     const removeBtn = favoriteItem.querySelector('.remove-favorite');
     removeBtn.addEventListener('click', () => removeFavorite(story.id));
+    // 添加触摸事件支持，确保在移动设备上正常工作
+    removeBtn.addEventListener('touchend', (e) => {
+        e.preventDefault(); // 防止触摸事件触发两次点击
+        removeFavorite(story.id);
+    });
     
     const titleElement = favoriteItem.querySelector('.favorite-title');
     titleElement.addEventListener('click', () => {
         selectStory(story);
         showStoryDetail();
     });
+    // 添加触摸事件支持，确保在移动设备上正常工作
+    titleElement.addEventListener('touchend', (e) => {
+        e.preventDefault(); // 防止触摸事件触发两次点击
+        selectStory(story);
+        showStoryDetail();
+    });
     
     const viewStoryBtn = favoriteItem.querySelector('.view-story');
     viewStoryBtn.addEventListener('click', () => {
+        selectStory(story);
+        showStoryDetail();
+    });
+    // 添加触摸事件支持，确保在移动设备上正常工作
+    viewStoryBtn.addEventListener('touchend', (e) => {
+        e.preventDefault(); // 防止触摸事件触发两次点击
         selectStory(story);
         showStoryDetail();
     });

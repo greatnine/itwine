@@ -354,6 +354,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    /* 添加触摸设备支持 */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .btn-primary {
@@ -449,6 +452,8 @@ body {
     .btn {
         width: 100%;
         justify-content: center;
+        min-height: 44px; /* 增加最小高度，提高触摸体验 */
+        padding: 12px 24px; /* 确保有足够的内边距 */
     }
 }
 
@@ -697,5 +702,8 @@ body {
     .favorite-actions .btn {
         width: 100%;
         justify-content: center;
+        min-height: 44px; /* 增加最小高度，提高触摸体验 */
+        padding: 12px 16px; /* 确保有足够的内边距 */
+        margin-bottom: 10px; /* 添加按钮之间的间距 */
     }
 }
