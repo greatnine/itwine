@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+/* 自定义字体 */
+@font-face {
+    font-family: 'SimYou';
+    src: url('../fonts/SIMYOU.TTF') format('truetype');
+}
+
 /* CSS变量定义 - 明亮主题 */
 :root {
     --primary-color: #6c5ce7;
@@ -286,6 +292,226 @@ body {
     font-size: 2rem;
     margin-bottom: 15px;
     color: var(--text-primary);
+}
+
+/* 名人论断样式 */
+.reading-quote {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    position: relative;
+    border-left: 4px solid var(--accent-color);
+}
+
+.quote-content p {
+    font-family: 'SimYou', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    text-indent: 2em;
+}
+
+.quote-author {
+    text-align: right;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* 特别推荐区域 */
+.recommendations-section {
+    padding: 0 20px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 25vh; /* 调整位置到屏幕下方四分之一处 */
+}
+
+.recommendations-title {
+    font-family: 'SimYou', sans-serif;
+    font-size: 1rem; /* 与推荐字体一样大 */
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.recommendations-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.recommendation-category {
+    margin-bottom: 25px;
+}
+
+.recommendation-category-title {
+    font-family: 'SimYou', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.recommendation-item {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.recommendation-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.recommendation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.recommendation-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.recommendation-author {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.recommendation-reason {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.recommendation-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color var(--transition-speed);
+}
+
+.recommendation-link:hover {
+    color: var(--primary-color);
+}
+
+.recommendation-link i {
+    font-size: 0.8rem;
+}
+
+/* 单行显示推荐项样式 */
+.recommendation-single-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-family: 'SimYou', sans-serif;
+    font-size: 1rem;
+    color: var(--text-primary);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    cursor: pointer;
+}
+
+.recommendation-single-line:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.recommendation-single-line .category-icon {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.recommendation-single-line .category-name {
+    color: var(--text-primary);
+    margin-right: 5px;
+}
+
+.recommendation-single-line .category-separator {
+    color: var(--accent-color);
+    margin: 0 5px;
+}
+
+.recommendation-single-line .story-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem; /* 与推荐字体一样大 */
+}
+
+.recommendation-single-line .author-name {
+    color: var(--text-secondary);
+}
+
+.recommendation-single-line .recommend-reason {
+    color: var(--text-primary);
+}
+
+.recommendation-single-line .detail-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+}
+
+.recommendation-single-line .detail-link:hover {
+    color: var(--primary-color);
+}
+
+.recommendation-single-line .detail-hint {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .recommendations-title {
+        font-size: 1.5rem;
+    }
+    
+    .recommendation-category-title {
+        font-size: 1.1rem;
+    }
+    
+    .recommendation-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .recommendation-single-line {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
 }
 
 .story-header {

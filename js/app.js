@@ -43,6 +43,9 @@ function initApp() {
     
     // 绑定事件监听器
     bindEventListeners();
+    
+    // 显示欢迎消息和推荐区域
+    backToHome();
 }
 
 // 备份收藏数据
@@ -248,6 +251,9 @@ function renderStoryDetail(story) {
             <button class="btn btn-secondary" id="add-to-favorites">
                 <i class="fas fa-heart"></i> 收藏
             </button>
+            <button class="btn btn-secondary" id="back-to-home">
+                <i class="fas fa-home"></i> 返回主页
+            </button>
         </div>
     `;
     
@@ -262,11 +268,142 @@ function renderStoryDetail(story) {
         });
     }
     
+    // 添加返回主页按钮事件
+    const backToHomeBtn = document.getElementById('back-to-home');
+    if (backToHomeBtn) {
+        backToHomeBtn.addEventListener('click', backToHome);
+        // 添加触摸事件支持，确保在移动设备上正常工作
+        backToHomeBtn.addEventListener('touchend', (e) => {
+            e.preventDefault(); // 防止触摸事件触发两次点击
+            backToHome();
+        });
+    }
+    
     // 更新收藏按钮状态
     updateFavoriteButton();
     
     // 添加淡入动画
     elements.storyDetail.classList.add('fade-in');
+}
+
+// 获取随机名人论断
+function getRandomQuote() {
+    if (!readingQuotes || readingQuotes.length === 0) {
+        return null;
+    }
+    
+    const randomIndex = Math.floor(Math.random() * readingQuotes.length);
+    return readingQuotes[randomIndex];
+}
+
+// 渲染推荐区域
+function renderRecommendations() {
+    let recommendationsHTML = '<div class="recommendations-section">';
+    recommendationsHTML += '<h2 class="recommendations-title">特别推荐</h2>';
+    
+    // 遍历每个分类
+    Object.keys(storiesCollection).forEach(categoryKey => {
+        const category = storiesCollection[categoryKey];
+        const recommendedStories = category.stories.filter(story => story.isRecommended);
+        
+        // 如果该分类有推荐的故事，则显示该分类
+        if (recommendedStories.length > 0) {
+            // 添加推荐的故事，每个故事一行
+            recommendedStories.forEach(story => {
+                recommendationsHTML += `
+                    <div class="recommendation-single-line" data-story-id="${story.id}">
+                        <span class="category-name">${category.name}</span>
+                        <span class="category-separator"><i class="fas ${category.icon}"></i></span>
+                        <span class="story-title">${story.title}</span>
+                        <span class="author-name">——${story.author}。</span>
+                        <span class="recommend-reason">${story.recommendReason}</span>
+                        <span class="detail-hint">（点击请看详情）</span>
+                    </div>
+                `;
+            });
+        }
+    });
+    
+    recommendationsHTML += '</div>';
+    
+    return recommendationsHTML;
+}
+
+// 返回主页
+function backToHome() {
+    // 重置当前故事
+    appState.currentStory = null;
+    
+    // 重置活动分类
+    appState.activeCategory = null;
+    document.querySelectorAll('.category').forEach(cat => {
+        cat.classList.remove('active');
+    });
+    
+    // 重置活动故事项
+    document.querySelectorAll('.story-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // 显示欢迎消息和推荐区域
+    elements.storyDetail.innerHTML = `
+        <div class="welcome-message">
+            <i class="fas fa-book-open"></i>
+            <h2>欢迎来到互动小说集</h2>
+            <p>请从左侧目录选择一个故事开始阅读<br>(点击左上角目录图标展开目录)</p>
+        </div>
+    `;
+    
+    // 添加名人论断
+    const randomQuote = getRandomQuote();
+    if (randomQuote) {
+        const quoteHTML = `
+            <div class="reading-quote">
+                <div class="quote-content">
+                    <p>${randomQuote.content}</p>
+                    <div class="quote-author">—— ${randomQuote.author}（${randomQuote.title}）</div>
+                </div>
+            </div>
+        `;
+        elements.storyDetail.innerHTML += quoteHTML;
+    }
+    
+    // 添加推荐区域
+    elements.storyDetail.innerHTML += renderRecommendations();
+    
+    // 为推荐区域添加点击事件
+    document.querySelectorAll('.recommendation-single-line').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const storyId = item.getAttribute('data-story-id');
+            
+            // 在所有分类中查找故事
+            let foundStory = null;
+            Object.keys(storiesCollection).forEach(categoryKey => {
+                const category = storiesCollection[categoryKey];
+                const story = category.stories.find(s => s.id === storyId);
+                if (story) {
+                    foundStory = story;
+                }
+            });
+            
+            if (foundStory) {
+                selectStory(foundStory);
+            }
+        });
+    });
+    
+    // 如果当前在收藏页面，则切换回故事详情页面
+    if (appState.currentView === 'favorites') {
+        showStoryDetail();
+    }
+    
+    // 在移动设备上关闭侧边栏
+    if (window.innerWidth <= 768) {
+        if (appState.sidebarOpen) {
+            toggleSidebar();
+        }
+    }
 }
 
 // 切换侧边栏
