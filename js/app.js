@@ -172,6 +172,35 @@ function renderStoryCategories() {
         // 添加到容器
         container.appendChild(categoryElement);
     });
+    
+    // 添加艺术分隔线
+    const separator = document.createElement('div');
+    separator.className = 'quotes-separator';
+    container.appendChild(separator);
+    
+    // 添加名人名言区域
+    const quotesSection = document.createElement('div');
+    quotesSection.className = 'quotes-section';
+    
+    const quotesTitle = document.createElement('h3');
+    quotesTitle.className = 'quotes-title';
+    quotesTitle.innerHTML = '<i class="fas fa-quote-left"></i> 名人论阅读';
+    
+    const quotesContent = document.createElement('div');
+    quotesContent.className = 'quotes-content';
+    
+    // 获取随机名人论断
+    const randomQuote = getRandomQuote();
+    if (randomQuote) {
+        quotesContent.innerHTML = `
+            <p class="quote-text">${randomQuote.content}</p>
+            <p class="quote-author">—— ${randomQuote.author}</p>
+        `;
+    }
+    
+    quotesSection.appendChild(quotesTitle);
+    quotesSection.appendChild(quotesContent);
+    container.appendChild(quotesSection);
 }
 
 // 显示指定分类的故事列表
@@ -354,19 +383,35 @@ function backToHome() {
         </div>
     `;
     
-    // 添加名人论断
-    const randomQuote = getRandomQuote();
-    if (randomQuote) {
-        const quoteHTML = `
-            <div class="reading-quote">
-                <div class="quote-content">
-                    <p>${randomQuote.content}</p>
-                    <div class="quote-author">—— ${randomQuote.author}（${randomQuote.title}）</div>
+    // 添加上方艺术分隔线
+    elements.storyDetail.innerHTML += `
+        <div class="reading-inspiration-separator-top"></div>
+    `;
+    
+    // 添加激励阅读片段
+    const randomInspiration = getRandomReadingInspiration();
+    const randomTitle = getRandomInspirationTitle();
+    if (randomInspiration) {
+        elements.storyDetail.innerHTML += `
+            <div class="reading-inspiration-section">
+                <div class="inspiration-title">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>${randomTitle}</span>
+                </div>
+                <div class="inspiration-divider"></div>
+                <div class="inspiration-content">
+                    <p>${randomInspiration.content.replace(/\n/g, '<br>')}</p>
                 </div>
             </div>
         `;
-        elements.storyDetail.innerHTML += quoteHTML;
     }
+    
+    // 添加下方艺术分隔线
+    elements.storyDetail.innerHTML += `
+        <div class="reading-inspiration-separator-bottom"></div>
+    `;
+    
+    // 名人论断已移动到左侧边栏
     
     // 添加推荐区域
     elements.storyDetail.innerHTML += renderRecommendations();
