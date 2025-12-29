@@ -3,100 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>星光下的约定 - 互动小说</title>
+    <title>互动小说</title>
+    <link rel="stylesheet" href="story.css">
     <style>
+        /* 基本样式 */
         body {
-            font-family: 'Microsoft YaHei', sans-serif;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
             background-color: #f5f5f5;
-            color: #333;
+        }
+        .story-container {
             max-width: 800px;
             margin: 0 auto;
-        }
-        .container {
-            background-color: white;
-            padding: 30px;
+            background: white;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        h1 {
-            color: #673ab7;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .story-info {
-            margin-bottom: 30px;
-            padding: 15px;
-            background-color: #f9f9f9;
+        .ending-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
             border-radius: 5px;
+            background: #f9f9f9;
         }
-        .story-content {
-            text-indent: 2em;
+        .ending-item strong {
+            color: #333;
+        }
+        
+        /* 操作按钮框样式 */
+        .action-buttons-box {
+            display: flex;
+            gap: 10px;
             margin-bottom: 20px;
         }
-        .choices {
-            margin-top: 30px;
-        }
-        .choice-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            background-color: #673ab7;
-            color: white;
-            border: none;
+        
+        .action-buttons-box button {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            transition: all 0.3s;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* 结局按钮样式 - 淡色 */
+        .btn-endings {
+            background: #f8f9fa;
+            color: #6c757d;
+            border-color: #dee2e6;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        .btn-endings:hover {
+            background: #f8f9fa;
+            color: #6c757d;
+        }
+        
+        /* 结局按钮可用状态 - 绿色 */
+        .btn-endings.enabled {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+            cursor: pointer;
+            opacity: 1;
+        }
+        
+        .btn-endings.enabled:hover {
+            background: #218838;
+            border-color: #1e7e34;
+        }
+        
+        /* 重新开始按钮样式 */
+        .btn-restart {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        
+        .btn-restart:hover {
+            background: #0056b3;
+            border-color: #0056b3;
+        }
+        
+        /* 返回主页按钮样式 - 暗红色 */
+        .btn-home {
+            background: #8B0000;
+            color: white;
+            border-color: #8B0000;
+        }
+        
+        .btn-home:hover {
+            background: #660000;
+            border-color: #660000;
+        }
+        
+        /* 折叠样式 */
+        .ending-toggle {
+            cursor: pointer;
+            user-select: none;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             transition: background-color 0.3s;
         }
-        .choice-btn:hover {
-            background-color: #512da8;
+        
+        .ending-toggle:hover {
+            background: #e0e0e0;
         }
-        .back-btn {
-            background-color: #9e9e9e;
+        
+        .toggle-icon {
+            transition: transform 0.3s;
         }
-        .back-btn:hover {
-            background-color: #757575;
+        
+        .ending-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .ending-content.expanded {
+            max-height: 1000px; /* 足够大的值容纳所有结局 */
+        }
+        
+        .ending-content.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        
+        /* 结局显示样式 */
+        .ending-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        
+        .ending-icon {
+            font-size: 20px;
+            margin-right: 12px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        .ending-icon.positive {
+            color: #e74c3c; /* 红色心形 */
+        }
+        
+        .ending-icon.neutral {
+            color: #f39c12; /* 橙色星星 */
+        }
+        
+        .ending-text {
+            flex: 1;
+            color: #333;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>星光下的约定</h1>
-        
-        <div class="story-info">
-            <p><strong>作者：</strong>梦语者</p>
-            <p><strong>标签：</strong>现代言情, 都市, 青春</p>
-            <p><strong>状态：</strong>连载中</p>
+    <div class="story-container">
+        <!-- 操作按钮框 -->
+        <div class="action-buttons-box">
+            <button class="btn-endings" id="ending-toggle" onclick="toggleEndings()">
+                <span>故事的可能结局</span>
+                <span class="toggle-icon">▼</span>
+            </button>
+            <button class="btn-restart" onclick="restartGame()">
+                <i class="fas fa-redo"></i> 重新开始
+            </button>
+            <button class="btn-home" onclick="goToHome()">
+                <i class="fas fa-home"></i> 返回主页
+            </button>
         </div>
         
-        <div class="story-content">
-            <p>在繁华都市的夜晚，两个素不相识的灵魂在星光下相遇，许下了一个改变一生的约定。这是一个关于爱情、成长和追逐梦想的故事。</p>
+        <!-- 图片容器 - 恢复到原来的位置 -->
+        <div class="scene-image-container" id="scene-image-container">
+            <!-- 场景图片将通过JavaScript动态加载 -->
         </div>
         
-        <div class="choices">
-            <button class="choice-btn" onclick="makeChoice(1)">选择一</button>
-            <button class="choice-btn" onclick="makeChoice(2)">选择二</button>
-            <button class="choice-btn" onclick="makeChoice(3)">选择三</button>
-            <button class="choice-btn back-btn" onclick="goBack()">返回故事列表</button>
+        <!-- 故事结局描述 - 可折叠显示 -->
+        <div class="ending-description" id="ending-description">
+            <div class="ending-content" id="ending-content">
+                <div id="ending-list">
+                    <!-- 结局列表将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- 彩色艺术横线 -->
+        <div class="artistic-divider"></div>
+        
+        <div class="story-content" id="story-content">
+            <p>故事内容加载中...</p>
+        </div>
+        
+        <div class="choices-container" id="choices-container">
+            <!-- 选择项将通过JavaScript动态加载 -->
+        </div>
+
+        <!-- 页脚信息框 -->
+        <div class="footer-box">
+            <div class="footer-left">
+                <span class="footer-title" id="footer-title">加载中...</span>
+                <span class="footer-author" id="footer-author">加载中...</span>
+            </div>
+            <div class="footer-right">
+                <div class="stats-container" id="stats-container">
+                    <!-- 特征值将通过JavaScript动态加载 -->
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        function makeChoice(choice) {
-            // 这里可以根据选择展示不同的内容
-            // 暂时简单提示
-            alert('你选择了选项 ' + choice + '。故事将继续发展...');
-            // 实际应用中，这里可以加载不同的章节或内容
-        }
-        
-        function goBack() {
-            // 返回故事列表
-            window.location.href = '../../../index.html';
-        }
-    </script>
+    <script src="story-data.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
