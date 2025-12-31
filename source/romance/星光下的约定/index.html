@@ -170,6 +170,64 @@
             color: #333;
             line-height: 1.5;
         }
+        
+        /* 简化的音频控制样式 - 透明背景 */
+        .audio-toggle {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            font-family: Arial, sans-serif;
+            transform: none;
+        }
+        
+        .audio-toggle:hover {
+            background: rgba(127, 179, 213, 0.3);
+            transform: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* 播放状态 */
+        .audio-toggle.playing {
+            background: rgba(70, 130, 180, 0.1);
+        }
+        
+        .audio-toggle.playing:hover {
+            background: rgba(70, 130, 180, 0.2);
+        }
+        
+        .audio-icon {
+            font-size: 20px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: none;
+        }
+        
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 10px;
+        }
+        
+        .volume-control label {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        #volume-slider {
+            width: 100px;
+        }
     </style>
 </head>
 <body>
@@ -188,9 +246,16 @@
             </button>
         </div>
         
-        <!-- 图片容器 - 恢复到原来的位置 -->
+        <!-- 图片容器 - 支持背景图片和角色立绘 -->
         <div class="scene-image-container" id="scene-image-container">
-            <!-- 场景图片将通过JavaScript动态加载 -->
+            <!-- 场景背景图片 -->
+            <div class="scene-background" id="scene-background">
+                <img id="background-image" alt="场景背景" style="display: none;">
+            </div>
+            <!-- 角色立绘容器 -->
+            <div class="character-container" id="character-container">
+                <!-- 角色立绘将通过JavaScript动态加载 -->
+            </div>
         </div>
         
         <!-- 故事结局描述 - 可折叠显示 -->
@@ -216,6 +281,17 @@
         <!-- 页脚信息框 -->
         <div class="footer-box">
             <div class="footer-left">
+                <!-- 音频控制面板 -->
+                <div class="audio-controls" id="audio-controls" style="display: flex; align-items: center;">
+                    <button class="audio-toggle" id="bgm-toggle" onclick="toggleBGM()">
+                <i class="audio-icon">⏸️</i>
+            </button>
+                    <div class="volume-control" id="volume-control">
+                        <label for="volume-slider">音量</label>
+                        <input type="range" id="volume-slider" min="0" max="100" value="70" onchange="changeVolume(this.value)">
+                    </div>
+                </div>
+                
                 <span class="footer-title" id="footer-title">加载中...</span>
                 <span class="footer-author" id="footer-author">加载中...</span>
             </div>
@@ -226,6 +302,10 @@
             </div>
         </div>
     </div>
+
+    <!-- 音频元素（隐藏） -->
+    <audio id="bgm-audio" loop autoplay muted></audio>
+    <audio id="sfx-audio"></audio>
 
     <script src="story-data.js"></script>
     <script src="game.js"></script>

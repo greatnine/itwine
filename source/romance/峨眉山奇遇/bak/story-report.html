@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故事数据分析报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-card.success {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        .stat-card.warning {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        
+        .stat-card.error {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+        
+        .stat-card h3 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .list {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .list-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        
+        .list-item .label {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .list-item .value {
+            color: #666;
+            margin-left: 10px;
+        }
+        
+        .recommendations {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .recommendations h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .recommendations ul {
+            list-style-position: inside;
+            color: #856404;
+        }
+        
+        .recommendations li {
+            margin: 5px 0;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .badge-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .badge-warning {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .badge-error {
+            background: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 故事数据分析报告</h1>
+            <p>生成时间: 2025/12/29 13:07:55</p>
+        </div>
+        
+        <div class="section">
+            <h2>✅ 完整性验证</h2>
+            <div class="stats-grid">
+                <div class="stat-card success">
+                    <h3>58</h3>
+                    <p>总场景数</p>
+                </div>
+                <div class="stat-card success">
+                    <h3>0</h3>
+                    <p>缺失场景</p>
+                </div>
+                <div class="stat-card success">
+                    <h3>0</h3>
+                    <p>孤立场景</p>
+                </div>
+                <div class="stat-card success">
+                    <h3>0</h3>
+                    <p>无选择项场景</p>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            
+        </div>
+        
+        
+        <div class="section">
+            <h2>📊 路径深度分析</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>6</h3>
+                    <p>最大深度</p>
+                </div>
+                <div class="stat-card">
+                    <h3>4</h3>
+                    <p>最小深度</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5</h3>
+                    <p>平均深度</p>
+                </div>
+                <div class="stat-card success">
+                    <h3>32</h3>
+                    <p>结局路径数</p>
+                </div>
+            </div>
+            
+            
+            
+            
+        </div>
+        
+        
+        
+        <div class="section">
+            <h2>💖 情感系统分析</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>89</h3>
+                    <p>总选择项</p>
+                </div>
+                <div class="stat-card">
+                    <h3>89</h3>
+                    <p>带效果的选择</p>
+                </div>
+                <div class="stat-card">
+                    <h3>53</h3>
+                    <p>正面变化</p>
+                </div>
+                <div class="stat-card">
+                    <h3>3</h3>
+                    <p>负面变化</p>
+                </div>
+            </div>
+            
+            
+            <div class="recommendations">
+                <h3>💡 建议:</h3>
+                <ul>
+                    <li>正面情感变化过多，可能缺乏戏剧冲突，建议增加一些负面选择</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        
+        
+        <div class="section">
+            <h2>⚖️ 故事平衡性分析</h2>
+            <div class="list">
+                <h3>选择项分布:</h3>
+                
+                    <div class="list-item">
+                        <span class="label">3 个选择项:</span>
+                        <span class="value">5 个场景</span>
+                    </div>
+                
+                    <div class="list-item">
+                        <span class="label">2 个选择项:</span>
+                        <span class="value">21 个场景</span>
+                    </div>
+                
+                    <div class="list-item">
+                        <span class="label">1 个选择项:</span>
+                        <span class="value">32 个场景</span>
+                    </div>
+                
+            </div>
+            
+            
+            <div class="list">
+                <h3>分支规模:</h3>
+                
+                    <div class="list-item">
+                        <span class="label">是的，我是来拍摄峨眉山的美景的:</span>
+                        <span class="value">58 个场景</span>
+                    </div>
+                
+                    <div class="list-item">
+                        <span class="label">只是个业余爱好者，你呢？:</span>
+                        <span class="value">58 个场景</span>
+                    </div>
+                
+                    <div class="list-item">
+                        <span class="label">我更像是来寻找灵感的，和你一样:</span>
+                        <span class="value">58 个场景</span>
+                    </div>
+                
+            </div>
+            
+            
+            
+            <div class="recommendations">
+                <h3>💡 建议:</h3>
+                <ul>
+                    <li>平均选择项较少，建议增加更多选择以丰富游戏体验</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        
+        <div class="footer">
+            <p>🤖 智能脚本设计工具 v2.0 | 生成时间: 2025/12/29 13:07:55</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -22,6 +22,13 @@ const mediaManager = {
         this.bgmAudio = document.getElementById('bgm-audio');
         this.sfxAudio = document.getElementById('sfx-audio');
         
+        // 设置初始状态为等待播放
+        this.isMuted = false;
+        if (this.bgmAudio) {
+            this.bgmAudio.pause();
+            this.bgmAudio.currentTime = 0;
+        }
+        
         // 设置初始音量
         this.updateVolume();
         
@@ -49,16 +56,26 @@ const mediaManager = {
     playBGM(audioPath, loop = true) {
         if (!this.bgmAudio || !audioPath) return;
         
-        // 如果是同一首BGM，不做处理
-        if (this.currentBGM === audioPath && !this.bgmAudio.paused) {
-            return;
-        }
+        // 确保音频元素正确初始化
+        console.log('尝试播放BGM:', audioPath);
+        
+        // 重置音频元素
+        this.bgmAudio.pause();
+        this.bgmAudio.currentTime = 0;
         
         this.currentBGM = audioPath;
         this.bgmAudio.src = audioPath;
         this.bgmAudio.loop = loop;
-        this.bgmAudio.play().catch(e => {
-            console.warn('BGM播放失败:', e);
+        this.bgmAudio.muted = this.isMuted;
+        
+        // 尝试播放，处理自动播放限制
+        this.bgmAudio.play().then(() => {
+            console.log('BGM播放成功:', audioPath);
+        }).catch(e => {
+            console.warn('BGM自动播放失败，等待用户交互:', e);
+            
+            // 确保音频已加载，等待用户交互后可播放
+            this.bgmAudio.load();
         });
     },
     
@@ -334,7 +351,7 @@ function checkAndShowPlayerEnding(sceneName, scene) {
 }
 
 // 初始化游戏
-function initGame() {
+function initGame(autoPlayAudio = false) {
     // 初始化多媒体系统
     mediaManager.initAudio();
     
@@ -374,8 +391,25 @@ function initGame() {
     // 预加载多媒体资源
     preloadStoryMedia();
     
-    // 播放默认背景音乐
-    mediaManager.playBGM('sound/music.mp3');
+    // 初始化音频元素
+        if (mediaManager.bgmAudio) {
+            // 设置音频源
+            mediaManager.bgmAudio.src = 'sound/music.mp3';
+            mediaManager.bgmAudio.loop = true;
+            mediaManager.bgmAudio.muted = true; // 初始状态为静音
+            mediaManager.isMuted = true; // 初始状态为静音
+            
+            const bgmToggle = document.getElementById('bgm-toggle');
+            const audioIcon = bgmToggle.querySelector('.audio-icon');
+            
+            // 统一逻辑：初始状态都显示▶️（等待播放）
+            bgmToggle.className = 'audio-toggle';
+            audioIcon.textContent = '▶️'; // 暂停状态显示播放图标
+            
+            // 保持静音状态，等待用户点击播放
+            mediaManager.bgmAudio.muted = true;
+            mediaManager.isMuted = true;
+        }
     
     console.log('游戏初始化:', gameState);
     loadScene(gameState.currentScene);
@@ -512,7 +546,7 @@ function updateStats() {
 // 重新开始游戏
 function restartGame() {
     if (confirm('确定要重新开始游戏吗？所有进度将丢失。')) {
-        initGame();
+        initGame(); // 重新开始时不自动播放音频，统一逻辑
     }
 }
 
@@ -521,29 +555,54 @@ function goToHome() {
     window.location.href = '../../../index.html';
 }
 
-// 音频控制函数
+// 音频控制函数 - 实现正确的图标切换顺序
 function toggleBGM() {
     const bgmToggle = document.getElementById('bgm-toggle');
     const bgmAudio = mediaManager.bgmAudio;
+    const audioIcon = bgmToggle.querySelector('.audio-icon');
     
-    // 检查当前音频状态
-    if (bgmAudio.paused) {
-        // 如果暂停或停止，则播放
+    // 获取当前图标状态
+    const currentIcon = audioIcon.textContent;
+    
+    console.log('当前音频状态:', currentIcon, '播放状态:', !bgmAudio.paused, '静音状态:', bgmAudio.muted);
+    
+    // 标准音乐播放器惯例：播放(▶️) 暂停(⏸️)
+    if (currentIcon === '▶️') {
+        // 从播放切换到暂停
         mediaManager.isMuted = false;
-        bgmAudio.play().catch(e => {
+        bgmAudio.muted = false;
+        
+        // 确保音频源已设置
+        if (!bgmAudio.src.includes('sound/music.mp3')) {
+            bgmAudio.src = 'sound/music.mp3';
+            bgmAudio.loop = true;
+            bgmAudio.load();
+        }
+        
+        // 播放音频
+        bgmAudio.play().then(() => {
+            console.log('BGM播放成功');
+        }).catch(e => {
             console.warn('BGM播放失败:', e);
         });
-        bgmToggle.classList.remove('muted');
-        bgmToggle.querySelector('.audio-icon').textContent = '🎵';
+        
+        // 更新UI为暂停状态
+        bgmToggle.className = 'audio-toggle playing';
+        audioIcon.textContent = '⏸️';
     } else {
-        // 如果正在播放，则暂停
+        // 从暂停切换到播放
+        mediaManager.isMuted = true;
+        bgmAudio.muted = true;
         bgmAudio.pause();
-        bgmToggle.classList.add('muted');
-        bgmToggle.querySelector('.audio-icon').textContent = '🔇';
+        
+        // 更新UI为播放状态
+        bgmToggle.className = 'audio-toggle';
+        audioIcon.textContent = '▶️';
     }
     
     // 更新音量设置
     mediaManager.updateVolume();
+    console.log('切换后音频状态:', audioIcon.textContent, '播放状态:', !bgmAudio.paused, '静音状态:', bgmAudio.muted);
 }
 
 function changeVolume(value) {

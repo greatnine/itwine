@@ -1,0 +1,497 @@
+{
+  "timestamp": "2025-12-28T23:18:09.642Z",
+  "validation": {
+    "totalScenes": 58,
+    "definedScenes": [
+      "start",
+      "photographer",
+      "together",
+      "baoguo",
+      "qingyin",
+      "amateur",
+      "seeker",
+      "separate",
+      "cautious",
+      "secret_path",
+      "cultural_interest",
+      "art_inspiration",
+      "observe",
+      "protect",
+      "introduction",
+      "guide",
+      "alone",
+      "honor",
+      "inspiration",
+      "solo",
+      "quiet_leave",
+      "apology",
+      "appreciate",
+      "perfectionist",
+      "photograph_waterfall",
+      "help_painting",
+      "exchange_contact",
+      "farewell",
+      "dinner_invitation",
+      "buddhist_wisdom",
+      "architecture_art",
+      "watch_creation",
+      "detail_photos",
+      "protect_sketchbook",
+      "change_location",
+      "stay_calm",
+      "retreat_safely",
+      "literature_love",
+      "music_interest",
+      "mountain_legend",
+      "art_stories",
+      "continue_alone",
+      "regret_decision",
+      "soul_language",
+      "understanding",
+      "collaboration",
+      "mutual_learning",
+      "respect_creation",
+      "share_experience",
+      "future_collaboration",
+      "hopeful_future",
+      "inspired",
+      "accept_imperfection",
+      "value_perfectionism",
+      "model_invitation",
+      "art_discussion",
+      "touched",
+      "more_collaboration"
+    ],
+    "referencedScenes": [
+      "start",
+      "photographer",
+      "amateur",
+      "seeker",
+      "together",
+      "separate",
+      "cautious",
+      "baoguo",
+      "qingyin",
+      "secret_path",
+      "cultural_interest",
+      "art_inspiration",
+      "observe",
+      "protect",
+      "introduction",
+      "guide",
+      "alone",
+      "honor",
+      "inspiration",
+      "solo",
+      "quiet_leave",
+      "apology",
+      "appreciate",
+      "perfectionist",
+      "photograph_waterfall",
+      "help_painting",
+      "buddhist_wisdom",
+      "architecture_art",
+      "watch_creation",
+      "detail_photos",
+      "protect_sketchbook",
+      "change_location",
+      "stay_calm",
+      "retreat_safely",
+      "literature_love",
+      "music_interest",
+      "mountain_legend",
+      "art_stories",
+      "continue_alone",
+      "regret_decision",
+      "soul_language",
+      "understanding",
+      "collaboration",
+      "mutual_learning",
+      "respect_creation",
+      "share_experience",
+      "exchange_contact",
+      "farewell",
+      "dinner_invitation",
+      "future_collaboration",
+      "hopeful_future",
+      "inspired",
+      "accept_imperfection",
+      "value_perfectionism",
+      "model_invitation",
+      "art_discussion",
+      "touched",
+      "more_collaboration"
+    ],
+    "missingScenes": [],
+    "isolatedScenes": [],
+    "scenesWithoutChoices": [],
+    "cycles": [],
+    "isValid": true
+  },
+  "depth": null,
+  "emotion": {
+    "totalChoices": 89,
+    "choicesWithEffects": 89,
+    "emotionChanges": [
+      {
+        "scene": "start",
+        "choice": "是的，我是来拍摄峨眉山的美景的",
+        "key": "relationship",
+        "value": 5
+      },
+      {
+        "scene": "start",
+        "choice": "只是个业余爱好者，你呢？",
+        "key": "relationship",
+        "value": 3
+      },
+      {
+        "scene": "start",
+        "choice": "我更像是来寻找灵感的，和你一样",
+        "key": "relationship",
+        "value": 8
+      },
+      {
+        "scene": "photographer",
+        "choice": "当然，我很乐意与你同行",
+        "key": "relationship",
+        "value": 10
+      },
+      {
+        "scene": "photographer",
+        "choice": "我习惯一个人拍摄，但路上可以遇到",
+        "key": "relationship",
+        "value": 0
+      },
+      {
+        "scene": "photographer",
+        "choice": "如果你不介意我偶尔停下来拍照的话",
+        "key": "relationship",
+        "value": 5
+      },
+      {
+        "scene": "together",
+        "choice": "我们去报国寺吧，听说那里很灵验",
+        "key": "relationship",
+        "value": 5
+      },
+      {
+        "scene": "together",
+        "choice": "清音阁的风景应该很美，我们去那里",
+        "key": "relationship",
+        "value": 5
+      },
+      {
+        "scene": "together",
+        "choice": "走小路，也许会有意外的发现",
+        "key": "relationship",
+        "value": 3
+      },
+      {
+        "scene": "baoguo",
+        "choice": "是的，我们对佛教文化很感兴趣",
+        "key": "relationship",
+        "value": 6
+      },
+      {
+        "scene": "baoguo",
+        "choice": "我们是来寻找艺术灵感的",
+        "key": "relationship",
+        "value": 6
+      },
+      {
+        "scene": "qingyin",
+        "choice": "猴子可能很凶，我们还是远观吧",
+        "key": "relationship",
+        "value": 4
+      },
+      {
+        "scene": "qingyin",
+        "choice": "你先画，我去看看情况",
+        "key": "relationship",
+        "value": 8
+      },
+      {
+        "scene": "amateur",
+        "choice": "我叫[玩家姓名]，很高兴认识你",
+        "key": "relationship",
+        "value": 7
+      },
+      {
+        "scene": "amateur",
+        "choice": "一起走也好，我对峨眉山不太熟悉",
+        "key": "relationship",
+        "value": 5
+      },
+      {
+        "scene": "amateur",
+        "choice": "我其实更想独自体验这座山",
+        "key": "relationship",
+        "value": -5
+      },
+      {
+        "scene": "seeker",
+        "choice": "我叫[玩家姓名]，能与你同行是我的荣幸",
+        "key": "relationship",
+        "value": 12
+      },
+      {
+        "scene": "seeker",
+        "choice": "当然，灵感往往在交流中迸发",
+        "key": "relationship",
+        "value": 10
+      },
+      {
+        "scene": "seeker",
+        "choice": "我需要先独自感受一下，也许晚些时候会相遇",
+        "key": "relationship",
+        "value": 2
+      },
+      {
+        "scene": "separate",
+        "choice": "悄悄离开，不打扰她",
+        "key": "relationship",
+        "value": -3
+      },
+      {
+        "scene": "separate",
+        "choice": "上前打招呼，承认刚才的决定有些草率",
+        "key": "relationship",
+        "value": 8
+      },
+      {
+        "scene": "cautious",
+        "choice": "谢谢，我只是不想错过任何美好的瞬间",
+        "key": "relationship",
+        "value": 10
+      },
+      {
+        "scene": "cautious",
+        "choice": "其实我有时候会过于追求完美",
+        "key": "relationship",
+        "value": 6
+      },
+      {
+        "scene": "secret_path",
+        "choice": "我也要拍下这个美景",
+        "key": "relationship",
+        "value": 8
+      },
+      {
+        "scene": "secret_path",
+        "choice": "帮她找个更好的绘画角度",
+        "key": "relationship",
+        "value": 12
+      },
+      {
+        "scene": "cultural_interest",
+        "choice": "确实，佛教的智慧很深刻",
+        "key": "relationship",
+        "value": 7
+      },
+      {
+        "scene": "cultural_interest",
+        "choice": "我更感兴趣的是这里的建筑艺术",
+        "key": "relationship",
+        "value": 5
+      },
+      {
+        "scene": "art_inspiration",
+        "choice": "静静地欣赏她的创作过程",
+        "key": "relationship",
+        "value": 9
+      },
+      {
+        "scene": "art_inspiration",
+        "choice": "我也来拍一些细节照片",
+        "key": "relationship",
+        "value": 6
+      },
+      {
+        "scene": "observe",
+        "choice": "提醒她收好素描本",
+        "key": "relationship",
+        "value": 10
+      },
+      {
+        "scene": "observe",
+        "choice": "我们换个地方吧，这里猴子太多了",
+        "key": "relationship",
+        "value": 5
+      },
+      {
+        "scene": "protect",
+        "choice": "站在原地不动，保持冷静",
+        "key": "relationship",
+        "value": 12
+      },
+      {
+        "scene": "protect",
+        "choice": "慢慢后退，带她离开",
+        "key": "relationship",
+        "value": 8
+      },
+      {
+        "scene": "introduction",
+        "choice": "我也喜欢阅读和写作",
+        "key": "relationship",
+        "value": 8
+      },
+      {
+        "scene": "introduction",
+        "choice": "我对音乐也很感兴趣",
+        "key": "relationship",
+        "value": 7
+      },
+      {
+        "scene": "guide",
+        "choice": "什么传说？快告诉我",
+        "key": "relationship",
+        "value": 9
+      },
+      {
+        "scene": "guide",
+        "choice": "我更想听你讲讲艺术创作的故事",
+        "key": "relationship",
+        "value": 8
+      },
+      {
+        "scene": "alone",
+        "choice": "继续独自前行",
+        "key": "relationship",
+        "value": -10
+      },
+      {
+        "scene": "alone",
+        "choice": "上前打招呼，承认刚才的决定有些草率",
+        "key": "relationship",
+        "value": 15
+      },
+      {
+        "scene": "honor",
+        "choice": "我完全同意，艺术是灵魂的语言",
+        "key": "relationship",
+        "value": 12
+      },
+      {
+        "scene": "honor",
+        "choice": "能遇到理解我艺术追求的人真好",
+        "key": "relationship",
+        "value": 10
+      },
+      {
+        "scene": "inspiration",
+        "choice": "这个主意太棒了！",
+        "key": "relationship",
+        "value": 15
+      },
+      {
+        "scene": "inspiration",
+        "choice": "我们可以先互相学习对方的艺术形式",
+        "key": "relationship",
+        "value": 12
+      },
+      {
+        "scene": "solo",
+        "choice": "悄悄离开，让她专心创作",
+        "key": "relationship",
+        "value": 5
+      },
+      {
+        "scene": "solo",
+        "choice": "轻声打招呼，分享独自体验的感受",
+        "key": "relationship",
+        "value": 10
+      },
+      {
+        "scene": "quiet_leave",
+        "choice": "交换联系方式，约定下次再一起创作",
+        "key": "relationship",
+        "value": 15
+      },
+      {
+        "scene": "quiet_leave",
+        "choice": "祝福她创作顺利，就此告别",
+        "key": "relationship",
+        "value": 5
+      },
+      {
+        "scene": "apology",
+        "choice": "邀请她一起吃晚饭",
+        "key": "relationship",
+        "value": 20
+      },
+      {
+        "scene": "apology",
+        "choice": "约定下次一起创作",
+        "key": "relationship",
+        "value": 15
+      },
+      {
+        "scene": "appreciate",
+        "choice": "我也是，希望以后还能一起创作",
+        "key": "relationship",
+        "value": 18
+      },
+      {
+        "scene": "appreciate",
+        "choice": "今天的经历给了我很多灵感",
+        "key": "relationship",
+        "value": 15
+      },
+      {
+        "scene": "perfectionist",
+        "choice": "你说得对，我应该学会接受不完美",
+        "key": "relationship",
+        "value": 12
+      },
+      {
+        "scene": "perfectionist",
+        "choice": "但完美主义也有它的价值",
+        "key": "relationship",
+        "value": 10
+      },
+      {
+        "scene": "photograph_waterfall",
+        "choice": "邀请她做你的模特",
+        "key": "relationship",
+        "value": 20
+      },
+      {
+        "scene": "photograph_waterfall",
+        "choice": "讨论艺术创作的心得",
+        "key": "relationship",
+        "value": 15
+      },
+      {
+        "scene": "help_painting",
+        "choice": "被她的细心感动",
+        "key": "relationship",
+        "value": 25
+      },
+      {
+        "scene": "help_painting",
+        "choice": "邀请她一起创作更多作品",
+        "key": "relationship",
+        "value": 20
+      }
+    ],
+    "extremeChanges": [
+      {
+        "scene": "help_painting",
+        "choice": "被她的细心感动",
+        "key": "relationship",
+        "value": 25
+      }
+    ],
+    "emotionStats": {
+      "positive": 53,
+      "negative": 3,
+      "neutral": 1
+    },
+    "recommendations": [
+      "正面情感变化过多，可能缺乏戏剧冲突，建议增加一些负面选择"
+    ]
+  },
+  "balance": null
+}
