@@ -136,11 +136,51 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 .passage a:hover { color: pink; }
 
 
+
+/* 响应式基础 */
+body { font-size: 16px; padding: 12px; }
+
+/* 手机横屏/平板 */
+@media (min-width: 640px) {
+  body { padding: 15px; }
+}
+
+/* 桌面 */
+@media (min-width: 1024px) {
+  body { max-width: 800px; margin: 0 auto; padding: 20px; }
+}
+
+/* 触控优化 */
+.passage a { min-height: 44px; display: inline-block; }
+input[type="text"], textarea { font-size: 16px; }
+
+/* 手机隐藏侧边栏 */
+@media (max-width: 767px) {
+  #ui-bar { display: none; }
+  #story { margin-left: 0; }
+}
+
+
 /*手机 配置*/
 /* 必须有的三条 */
 #passages { max-width: 100%; padding: 15px; }
 img { max-width: 100%; height: auto; }
-a.link-internal { padding: 12px; min-height: 44px; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">Macro.add("currenttime", {
+a.link-internal { padding: 12px; min-height: 44px; }
+
+/* 移动端优先样式（默认） */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px;
+}
+/* 平板及以上 */
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+    padding: 15px;
+  }
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">Macro.add("currenttime", {
   tags: null,
   handler: function() {
     // Try the following code and catch any errors
