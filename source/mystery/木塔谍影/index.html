@@ -104,8 +104,19 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Wooden Tower (Sugarcube)" startnode="8" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="42CA986F-5FE0-4892-B111-81875F57EBAC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(' https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-/*font-family: 'Pacifico', cursive;    /*楷体*/*/
+	<tw-storydata name="Wooden Tower (Sugarcube)" startnode="8" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="42CA986F-5FE0-4892-B111-81875F57EBAC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+:root{
+    --font1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive;
+    --fonte3: 'Sriracha', cursive;
+}
+ /* 显示谷歌字体--楷体。Usage:    
+    font-family: var(--fonte2);   
+    或
+    font-family: var(--fonte3);
+ */
+
+
 @import url(' https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 /*#story { font-family: 'Merriweather', serif; }报纸体*/
 
@@ -119,7 +130,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 .passage a { 
     line-height: 2.25;   /* 链接所在段落的行距 */
     font-family: 'Pacifico', cursive;    /*楷体*/
-    font-size: 1.2em;  /*    段落字体在基础大小上再略微放大*/
+    font-size: 1.0em;  /*    段落字体在基础大小上再略微放大*/
     color: CornflowerBlue ; 
 }
 .passage a:hover { color: pink; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">Macro.add("currenttime", {
@@ -157,7 +168,12 @@ Macro.add("zhriqi", {
 });</script><tw-passagedata pid="1" name="StoryDisplayTitle" tags="" position="0,0" size="100,100">木塔谍影</tw-passagedata><tw-passagedata pid="2" name="StorySubtitle" tags="" position="0,0" size="100,100">短篇互动小说——Twine版</tw-passagedata><tw-passagedata pid="3" name="StoryCaption" tags="" position="0,0" size="100,100">----------</tw-passagedata><tw-passagedata pid="4" name="StoryAuthor" tags="" position="0,0" size="100,100">戚久柱编著&lt;br&gt;qijiuzhu@tsinghua.org.cn</tw-passagedata><tw-passagedata pid="5" name="StoryMenu" tags="" position="0,0" size="100,100">[[关于|About]]</tw-passagedata><tw-passagedata pid="6" name="StoryInit" tags="" position="0,0" size="100,100">&lt;&lt;script&gt;&gt;
 //UIBar.hide();  //隐藏 UI 栏（内置菜单所在位置）
 UIBar.stow();
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="About" tags="" position="0,0" size="100,100">&lt;h2 style=&quot;text-align: center; &quot;&gt;关于互动小说《木塔谍影》&lt;/h2&gt;  
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="About" tags="" position="0,0" size="100,100">&lt;&lt;script&gt;&gt;
+//UIBar.hide();  //隐藏 UI 栏（内置菜单所在位置）
+UIBar.stow();
+&lt;&lt;/script&gt;&gt;
+
+&lt;h2 style=&quot;text-align: center; &quot;&gt;关于互动小说《木塔谍影》&lt;/h2&gt;  
     &lt;&lt;return &quot;返回&quot;&gt;&gt;  
    
        &lt;strong&gt;故事背景：&lt;/strong&gt;本互动故事基于「作家新干线·短篇小说」范小天｜《木塔谍影》改编。讲述了公安干警为保护应县木塔这一国宝级文物，与境外势力斗智斗勇的故事。
@@ -182,9 +198,17 @@ UIBar.stow();
             文物保护，人人有责&lt;br&gt;
             传承文明，守护历史
         &lt;/p&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Start" tags="" position="25,25" size="100,100">故事发生在二十一世纪的二十年代。公安局特别科。
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Start" tags="" position="25,25" size="100,100">
+&lt;center&gt;
+&lt;img src=&quot;images/wooden2.png&quot; alt=&quot;&quot;  margin= &quot;auto&quot;&gt;
+&lt;/center&gt;
 
-周眼亮副总队长在书房里反复查看两条神秘短信。一个十年未用的本地号码，半月前突然收发信息后关机。这让他想起十年前战友何大山牺牲的文物走私案，主犯&quot;老A&quot;至今逍遥法外。
+&lt;h2 style=&quot;font-family: var(--fonte2); text-align: center;&quot;&gt;木塔谍影&lt;/h2&gt;
+&lt;hr&gt;
+
+故事发生在二十一世纪的二十年代。
+
+公安局特别科办公室内，周眼亮副队长在书房里反复查看两条神秘短信。一个十年未用的本地号码，半月前突然收发信息后关机。这让他想起十年前战友何大山牺牲的文物走私案，主犯&quot;老A&quot;至今逍遥法外。
 
 国安消息显示，境外势力正觊觎应县木塔的工艺技术。木塔是辽代建筑奇迹，全木结构不用一钉，斗拱技艺登峰造极。其修缮方案搁置三十年，背后似乎隐藏着什么。
 
@@ -325,7 +349,11 @@ UIBar.stow();
 晨语心中一紧，但语气坚定：&quot;明白。&quot;
 
 [[加强伪装-&gt;斋堂偶遇]]
-[[主动试探-&gt;险象环生]]</tw-passagedata><tw-passagedata pid="28" name="盯梢交锋" tags="" position="400,150" size="100,100">晨语加强了对田雄的监视。她发现田雄每天固定时间在寺内散步，路线总是经过木塔后墙。
+[[主动试探-&gt;险象环生]]</tw-passagedata><tw-passagedata pid="28" name="盯梢交锋" tags="" position="400,150" size="100,100">&lt;center&gt;
+&lt;img src=&quot;images/wooden1.png&quot; alt=&quot;&quot;  margin= &quot;auto&quot;&gt;
+&lt;/center&gt;
+
+晨语加强了对田雄的监视。她发现田雄每天固定时间在寺内散步，路线总是经过木塔后墙。
 
 通过望远镜观察，她看到田雄在测量围墙高度，记录保安巡逻间隔。这些行为明显是在为盗窃做准备。
 
@@ -339,19 +367,33 @@ UIBar.stow();
 老A的真实身份是香港走私集团头目，与日本右翼势力勾结，长期从事文物走私。
 
 [[案件总结-&gt;意外发现]]
-[[追捕老A-&gt;结局二：暗影犹存]]</tw-passagedata><tw-passagedata pid="30" name="结局一：国宝重光" tags="" position="25,400" size="100,100">案件告破，尹国生、田中雄一、宋一刀等全部落网。木塔修缮工艺图册失而复得，十年悬案终得昭雪。
+[[追捕老A-&gt;结局二：暗影犹存]]</tw-passagedata><tw-passagedata pid="30" name="结局一：国宝重光" tags="" position="25,400" size="100,100">&lt;center&gt;
+&lt;img src=&quot;images/wooden3.png&quot; alt=&quot;&quot;  margin= &quot;auto&quot;&gt;
+&lt;/center&gt;
+
+案件告破，尹国生、田中雄一、宋一刀等全部落网。木塔修缮工艺图册失而复得，十年悬案终得昭雪。
 
 何晋美继承父亲遗志，继续守护国宝。周眼亮拍着她的肩：&quot;老何可以安息了。&quot;
 
 木塔在专业修缮中焕发新生。但老A（黄一鹤）逃脱的遗憾，提醒众人：文物保护之路，任重道远。
 
-[[重新开始-&gt;Start]]</tw-passagedata><tw-passagedata pid="31" name="结局二：暗影犹存" tags="" position="150,400" size="100,100">主要嫌犯落网，但老A（黄一鹤）已逃回香港。审讯得知，他背后还有国际文物走私网络。
+&lt;strong&gt;The End&lt;/strong&gt;
+
+
+[[重新开始-&gt;Start]]</tw-passagedata><tw-passagedata pid="31" name="结局二：暗影犹存" tags="" position="150,400" size="100,100">&lt;center&gt;
+&lt;img src=&quot;images/wooden4.png&quot; alt=&quot;&quot;  margin= &quot;auto&quot;&gt;
+&lt;/center&gt;
+
+主要嫌犯落网，但老A（黄一鹤）已逃回香港。审讯得知，他背后还有国际文物走私网络。
 
 木塔图册虽已找回，但技术泄露风险仍在。周眼亮望着南方：&quot;战斗还未结束。&quot;
 
 何晋美申请加入跨境追逃小组。小伟支持她的决定，两人约定：&quot;等你回来。&quot;
 
 暗影犹存，但光明不灭。
+
+&lt;strong&gt;The End&lt;/strong&gt;
+
 
 [[重新开始-&gt;Start]]</tw-passagedata><tw-passagedata pid="32" name="西山老屋" tags="" position="900,150" size="100,100">康明凯带队夜探宋一刀的老屋。表面是石料仓库，但位置偏僻、设路障，极不寻常。
 
