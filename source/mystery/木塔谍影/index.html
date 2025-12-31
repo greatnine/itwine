@@ -122,14 +122,14 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 /* 极简字体放大方案 */
 #story {
-    font-size: 1.5em; /* 增大基础字体大小 */
+    font-size: 1.2em; /* 增大基础字体大小 */
     font-family: 'Merriweather', serif;    /*报纸体*/
     line-height: 1.7; /* 增加行高，使大字体更易阅读 */
-    margin: 1em 0; /* 调整段落间距以适应大字体 */
+    /* margin: 1em 0; 调整段落间距以适应大字体 */
 }
 .passage a { 
-    line-height: 2.25;   /* 链接所在段落的行距 */
-    font-family: 'Pacifico', cursive;    /*楷体*/
+    line-height: 2.5;   /* 链接所在段落的行距 */
+    font-family: var(--fonte2), cursive;    /*楷体*/
     font-size: 1.0em;  /*    段落字体在基础大小上再略微放大*/
     color: CornflowerBlue ; 
 }
@@ -137,49 +137,6 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 
 
-/* 响应式基础 */
-body { font-size: 16px; padding: 12px; }
-
-/* 手机横屏/平板 */
-@media (min-width: 640px) {
-  body { padding: 15px; }
-}
-
-/* 桌面 */
-@media (min-width: 1024px) {
-  body { max-width: 800px; margin: 0 auto; padding: 20px; }
-}
-
-/* 触控优化 */
-.passage a { min-height: 44px; display: inline-block; }
-input[type="text"], textarea { font-size: 16px; }
-
-/* 手机隐藏侧边栏 */
-@media (max-width: 767px) {
-  #ui-bar { display: none; }
-  #story { margin-left: 0; }
-}
-
-
-/*手机 配置*/
-/* 必须有的三条 */
-#passages { max-width: 100%; padding: 15px; }
-img { max-width: 100%; height: auto; }
-a.link-internal { padding: 12px; min-height: 44px; }
-
-/* 移动端优先样式（默认） */
-body {
-  font-size: 16px;
-  line-height: 1.5;
-  padding: 10px;
-}
-/* 平板及以上 */
-@media (min-width: 768px) {
-  body {
-    font-size: 17px;
-    padding: 15px;
-  }
-}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Macro.add("currenttime", {
   tags: null,
   handler: function() {
