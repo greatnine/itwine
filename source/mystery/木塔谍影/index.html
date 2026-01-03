@@ -111,12 +111,8 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     --fonte3: 'Sriracha', cursive;
 }
  /* 显示谷歌字体--楷体。Usage:    
-    font-family: var(--fonte2);   
-    或
-    font-family: var(--fonte3);
+    font-family: var(--fonte2); 或 font-family: var(--fonte3);
  */
-
-
 @import url(' https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 /*#story { font-family: 'Merriweather', serif; }报纸体*/
 
@@ -125,47 +121,27 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     font-size: 1.2em; /* 增大基础字体大小 */
     font-family: 'Merriweather', serif;    /*报纸体*/
     line-height: 1.7; /* 增加行高，使大字体更易阅读 */
-    /* margin: 1em 0; 调整段落间距以适应大字体 */
+    /*margin: 1em 0; 调整段落间距以适应大字体 */   
 }
+
+/*页面正文*/
+.passage * {
+   margin:0px 0px !important;  /* 左右各0px边距*/
+   white-space: normal !important; /*强制所有文本自动换行 */
+}
+
+/*页面选项链接*/
 .passage a { 
     line-height: 2.5;   /* 链接所在段落的行距 */
     font-family: var(--fonte2), cursive;    /*楷体*/
     font-size: 1.0em;  /*    段落字体在基础大小上再略微放大*/
     color: CornflowerBlue ; 
 }
-.passage a:hover { color: pink; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">Macro.add("currenttime", {
-  tags: null,
-  handler: function() {
-    // Try the following code and catch any errors
-    try {
-      // Get the current time and save it to the payload
-      this.payload.contents = new Date();
+.passage a:hover { color: pink; }
 
-      // Wikify (and append) the current payload contents
-      jQuery(this.output).wiki(this.payload.contents);
 
-    } catch (ex) {
-      // Return any errors
-      return this.error("Error: " + ex.message);
-    }
-  }
-});
 
-//<<zhriqi>><</zhriqi>>
-Macro.add("zhriqi", {
-  tags: null,
-  handler: function() {
-  const now = new Date();
-  const formatter = new Intl.DateTimeFormat('zh-CN', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-
-  const formattedDate = formatter.format(now);
-  jQuery(this.output).wiki(formattedDate);
- }
-});</script><tw-passagedata pid="1" name="About" tags="" position="0,0" size="100,100">&lt;&lt;script&gt;&gt;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">//;</script><tw-passagedata pid="1" name="About" tags="" position="0,0" size="100,100">&lt;&lt;script&gt;&gt;
 //UIBar.hide();  //隐藏 UI 栏（内置菜单所在位置）
 UIBar.stow();
 &lt;&lt;/script&gt;&gt;
@@ -200,8 +176,6 @@ UIBar.stow();
 &lt;center&gt;&lt;img src=&quot;images/wooden2.png&quot; alt=&quot;&quot;  style=&quot;margin: auto;&quot;&gt;&lt;/center&gt;
 &lt;h3 style=&quot;font-family: var(--fonte2); text-align: center;&quot;&gt;&lt;&lt;= $title&gt;&gt;&lt;/h3&gt;
 &lt;nobr&gt;
-
-
 &lt;nobr&gt;&lt;&lt;=either(
 &quot;我们的故事开始了&quot;, 
 &quot;这个故事是互动的。您的选择将决定故事的剧情走向和结局&quot;, 
