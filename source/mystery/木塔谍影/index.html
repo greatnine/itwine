@@ -104,7 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Wooden Tower (Sugarcube)" startnode="8" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="42CA986F-5FE0-4892-B111-81875F57EBAC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+	<tw-storydata name="Wooden Tower (Sugarcube)" startnode="2" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="42CA986F-5FE0-4892-B111-81875F57EBAC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
 :root{
     --font1: Verdana, Geneva, Tahoma, sans-serif;
     --fonte2: 'Passion One', cursive;
@@ -133,11 +133,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     font-size: 1.0em;  /*    段落字体在基础大小上再略微放大*/
     color: CornflowerBlue ; 
 }
-.passage a:hover { color: pink; }
-
-
-
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">Macro.add("currenttime", {
+.passage a:hover { color: pink; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">Macro.add("currenttime", {
   tags: null,
   handler: function() {
     // Try the following code and catch any errors
@@ -169,10 +165,7 @@ Macro.add("zhriqi", {
   const formattedDate = formatter.format(now);
   jQuery(this.output).wiki(formattedDate);
  }
-});</script><tw-passagedata pid="1" name="StoryDisplayTitle" tags="" position="0,0" size="100,100">木塔谍影</tw-passagedata><tw-passagedata pid="2" name="StorySubtitle" tags="" position="0,0" size="100,100">短篇互动小说——Twine版</tw-passagedata><tw-passagedata pid="3" name="StoryCaption" tags="" position="0,0" size="100,100">----------</tw-passagedata><tw-passagedata pid="4" name="StoryAuthor" tags="" position="0,0" size="100,100">戚久柱编著&lt;br&gt;qijiuzhu@tsinghua.org.cn</tw-passagedata><tw-passagedata pid="5" name="StoryMenu" tags="" position="0,0" size="100,100">[[关于|About]]</tw-passagedata><tw-passagedata pid="6" name="StoryInit" tags="" position="0,0" size="100,100">&lt;&lt;script&gt;&gt;
-//UIBar.hide();  //隐藏 UI 栏（内置菜单所在位置）
-UIBar.stow();
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="About" tags="" position="0,0" size="100,100">&lt;&lt;script&gt;&gt;
+});</script><tw-passagedata pid="1" name="About" tags="" position="0,0" size="100,100">&lt;&lt;script&gt;&gt;
 //UIBar.hide();  //隐藏 UI 栏（内置菜单所在位置）
 UIBar.stow();
 &lt;&lt;/script&gt;&gt;
@@ -202,33 +195,71 @@ UIBar.stow();
             文物保护，人人有责&lt;br&gt;
             传承文明，守护历史
         &lt;/p&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Start" tags="" position="25,25" size="100,100">&lt;center&gt;&lt;img src=&quot;images/wooden2.png&quot; alt=&quot;&quot;  margin= &quot;auto&quot;&gt;&lt;/center&gt;
-&lt;h3 style=&quot;font-family: var(--fonte2); text-align: center;&quot;&gt;木 塔 谍 影&lt;/h3&gt;
-故事发生在二十一世纪的二十年代。
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="25,25" size="100,100">&lt;nobr&gt;
+&lt;&lt;set $title to either(&quot;木塔谍影记&quot;, &quot;木 塔 谍 影&quot;, &quot;木塔谍影——国宝护卫战&quot;)&gt;&gt;
+&lt;center&gt;&lt;img src=&quot;images/wooden2.png&quot; alt=&quot;&quot;  style=&quot;margin: auto;&quot;&gt;&lt;/center&gt;
+&lt;h3 style=&quot;font-family: var(--fonte2); text-align: center;&quot;&gt;&lt;&lt;= $title&gt;&gt;&lt;/h3&gt;
+&lt;nobr&gt;
 
-公安局特别科办公室内，周眼亮副队长在书房里反复查看两条神秘短信。一个十年未用的本地号码，半月前突然收发信息后关机。这让他想起十年前战友何大山牺牲的文物走私案，主犯&quot;老A&quot;至今逍遥法外。
 
-国安消息显示，境外势力正觊觎应县木塔的工艺技术。木塔是辽代建筑奇迹，全木结构不用一钉，斗拱技艺登峰造极。其修缮方案搁置三十年，背后似乎隐藏着什么。
+&lt;nobr&gt;&lt;&lt;=either(
+&quot;我们的故事开始了&quot;, 
+&quot;这个故事是互动的。您的选择将决定故事的剧情走向和结局&quot;, 
+&quot;故事发生在二十一世纪的二十年代&quot;
+)&gt;&gt;&lt;/nobr&gt;。
 
-周眼亮掐灭烟头，做出了决定。
+&lt;&lt;= either(&quot;公安局特别科办公室内&quot;,&quot;特别行动队办公室内&quot;,&quot;在书房里&quot;,&quot;在办公室里&quot;)&gt;&gt;，周志锋副队长反复查看两条神秘短信。一个十年未用的本地号码，半月前突然收发信息后关机。这让他想起十年前战友何大山牺牲的文物走私案，主犯&quot;老A&quot;至今逍遥法外。
 
-[[调查手机信号来源-&gt;信号调查]]
-[[查阅十年前案卷-&gt;旧案重温]]
-[[联系技术部门-&gt;技术分析]]</tw-passagedata><tw-passagedata pid="9" name="人赃并获" tags="" position="775,275" size="100,100">外围，周眼亮带队扣押中巴车。机动队报告：宋一刀老屋草垛下有地下仓库，文物已被运走。另一辆车正驶向景区备用出口！
+&lt;&lt;= either(&quot;据国安局&quot;,&quot;上级安全部门&quot;,&quot;国安&quot;)&gt;&gt;国安消息显示，境外势力正觊觎应县木塔的工艺技术。木塔是辽代建筑奇迹，全木结构不用一钉，斗拱技艺登峰造极。其修缮方案搁置三十年，背后似乎隐藏着什么。
 
-周眼亮下令拦截，车上正是十年前失踪的文物。经清点，共有一百多件珍贵文物，其中不少是国家一级文物。
+周志锋&lt;&lt;= either(&quot;眉头紧皱，&quot;,&quot;放下手机，&quot;,&quot;站起身来，&quot;)&gt;&gt;推开茶杯，做出了决定。
+
+&lt;&lt;nobr&gt;&gt;&lt;&lt;set  $choice1 to either(
+&quot;手机信号来自哪里&quot;,
+&quot;弄清手机信号来自哪里&quot;,
+&quot;调查手机信号来源&quot;)&gt;&gt;
+&lt;&lt;set  $choice2 to either(
+&quot;梳理十年前案件&quot;,
+&quot;调取十年前案卷&quot;,
+&quot;查阅十年前案卷&quot;)&gt;&gt;
+&lt;&lt;set  $choice3 to either(
+&quot;求助技术部门&quot;,
+&quot;联系技术科&quot;,
+&quot;寻求技术部门帮助&quot;)&gt;&gt;
+&lt;&lt;set $rand to random(1,3)&gt;&gt;&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;if $rand is 1&gt;&gt;\
+	[[$choice3-&gt;技术分析]]    
+    [[$choice2-&gt;旧案重温]]    
+    [[$choice1-&gt;信号调查]]
+&lt;&lt;elseif  $rand is 2&gt;&gt;\	
+    [[$choice2-&gt;旧案重温]]    
+    [[$choice1-&gt;信号调查]]    
+    [[$choice3-&gt;技术分析]]
+&lt;&lt;else&gt;&gt;\
+    [[$choice1-&gt;信号调查]]    
+	[[$choice2-&gt;旧案重温]]    
+    [[$choice3-&gt;技术分析]]
+&lt;&lt;/if&gt;&gt;
+
+
+</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="0,0" size="100,100">戚久柱编著&lt;br&gt;qijiuzhu@tsinghua.org.cn</tw-passagedata><tw-passagedata pid="4" name="StoryCaption" tags="" position="0,0" size="100,100">----------</tw-passagedata><tw-passagedata pid="5" name="StoryDisplayTitle" tags="" position="0,0" size="100,100">木塔谍影</tw-passagedata><tw-passagedata pid="6" name="StoryInit" tags="" position="0,0" size="100,100">&lt;&lt;script&gt;&gt;
+//UIBar.hide();  //隐藏 UI 栏（内置菜单所在位置）
+UIBar.stow();
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="StoryMenu" tags="" position="0,0" size="100,100">[[关于|About]]</tw-passagedata><tw-passagedata pid="8" name="StorySubtitle" tags="" position="0,0" size="100,100">短篇互动小说——Twine版</tw-passagedata><tw-passagedata pid="9" name="人赃并获" tags="" position="775,275" size="100,100">外围，周志锋带队扣押中巴车。机动队报告：宋一刀老屋草垛下有地下仓库，文物已被运走。另一辆车正驶向景区备用出口！
+
+周志锋下令拦截，车上正是十年前失踪的文物。经清点，共有一百多件珍贵文物，其中不少是国家一级文物。
 
 同时，塔内战斗也取得胜利，所有嫌疑人被抓获。
 
 [[检查文物-&gt;意外发现]]
-[[审讯嫌疑人-&gt;真相浮现]]</tw-passagedata><tw-passagedata pid="10" name="信号调查" tags="" position="275,25" size="100,100">技术科精确定位，该号码最后一次信号出现在应县木塔景区附近。周眼亮眉头紧锁——木塔即将关闭维修，此时出现异常信号绝非巧合。
+[[审讯嫌疑人-&gt;真相浮现]]</tw-passagedata><tw-passagedata pid="10" name="信号调查" tags="" position="275,25" size="100,100">技术科精确定位，该号码最后一次信号出现在应县木塔景区附近。周志锋眉头紧锁——木塔即将关闭维修，此时出现异常信号绝非巧合。
 
 他想起副厅长的嘱托：何大山的女儿何晋美已化名&quot;晨语&quot;，以画家身份潜入木塔所在的广福寺。必须确保她的安全。
 
-窗外夕阳西沉，周眼亮拨通了电话。
+窗外夕阳西沉，周志锋拨通了电话。
 
 [[联系康明凯支队长-&gt;师徒商议]]
-[[联系应县老同学-&gt;地方接应]]</tw-passagedata><tw-passagedata pid="11" name="决胜时刻" tags="" position="525,275" size="100,100">副厅长下达总攻命令：&quot;各小组注意，今晚收网！康明凯、何晋美带人埋伏塔内；周眼亮控制外围车辆；机动队随时支援。&quot;
+[[联系应县老同学-&gt;地方接应]]</tw-passagedata><tw-passagedata pid="11" name="决胜时刻" tags="" position="525,275" size="100,100">副厅长下达总攻命令：&quot;各小组注意，今晚收网！康明凯、何晋美带人埋伏塔内；周志锋控制外围车辆；机动队随时支援。&quot;
 
 暴雨如注，三路警力部署完毕。尹国生、田雄、宋一刀率众潜入。他们分三队，田、宋警戒，尹带人入塔。
 
@@ -237,9 +268,9 @@ UIBar.stow();
 [[塔内搏斗-&gt;制服顽敌]]
 [[外围收网-&gt;人赃并获]]</tw-passagedata><tw-passagedata pid="12" name="制服顽敌" tags="" position="900,275" size="100,100">田雄挥匕首扑来，被康明凯踢飞。两人在雨水中搏斗，康明凯几记勾拳将其击倒。何晋美同时制服尹国生。其余歹徒纷纷就擒。
 
-外围，周眼亮带队扣押中巴车。机动队报告：宋一刀老屋草垛下有地下仓库，文物已被运走。另一辆车正驶向景区备用出口！
+外围，周志锋带队扣押中巴车。机动队报告：宋一刀老屋草垛下有地下仓库，文物已被运走。另一辆车正驶向景区备用出口！
 
-周眼亮下令拦截，车上正是十年前失踪的文物。
+周志锋下令拦截，车上正是十年前失踪的文物。
 
 [[检查文物-&gt;意外发现]]
 [[审讯嫌疑人-&gt;真相浮现]]</tw-passagedata><tw-passagedata pid="13" name="协同行动" tags="" position="150,150" size="100,100">晨语改变策略，以采风为名离开广福寺，住进景区附近的民宿。便衣干警假扮成她的助手，24小时保护。
@@ -263,9 +294,9 @@ UIBar.stow();
 当晚，晨语故意在房间自言自语：&quot;听说木塔要关闭了，我得抓紧画完...&quot;她知道窃听者会听到。
 
 [[设置反监听-&gt;反制计划]]
-[[加强安全措施-&gt;调整部署]]</tw-passagedata><tw-passagedata pid="16" name="地方接应" tags="" position="400,25" size="100,100">老张是周眼亮的警校同学，现任应县公安局副局长。他接到电话后立即部署：&quot;眼亮，你放心，我已经安排便衣在木塔周边布控。广福寺那边我也打了招呼，会暗中保护那位女画家。&quot;
+[[加强安全措施-&gt;调整部署]]</tw-passagedata><tw-passagedata pid="16" name="地方接应" tags="" position="400,25" size="100,100">老张是周志锋的警校同学，现任应县公安局副局长。他接到电话后立即部署：&quot;眼亮，你放心，我已经安排便衣在木塔周边布控。广福寺那边我也打了招呼，会暗中保护那位女画家。&quot;
 
-周眼亮叮嘱：&quot;老张，敌人在暗处，一定要小心。何大山的女儿化名晨语在寺里，她的安全是第一位的。&quot;
+周志锋叮嘱：&quot;老张，敌人在暗处，一定要小心。何大山的女儿化名晨语在寺里，她的安全是第一位的。&quot;
 
 &quot;明白，我会亲自盯这个事。&quot;
 
@@ -279,9 +310,9 @@ UIBar.stow();
 [[继续监视田雄-&gt;盯梢交锋]]
 [[检查房间安全-&gt;发现窃听]]</tw-passagedata><tw-passagedata pid="18" name="师徒商议" tags="" position="775,25" size="100,100">康明凯赶到周家，师徒二人在书房密谈。&quot;尹国生，古玩店老板，近期频繁接触广福寺的广福和尚。他还有个香港朋友田雄，自称佛学爱好者。&quot;
 
-周眼亮指出：&quot;广福负责木塔日常维护，能接触内部资料。尹国生可能是中间人。&quot;
+周志锋指出：&quot;广福负责木塔日常维护，能接触内部资料。尹国生可能是中间人。&quot;
 
-晚饭时，周妻华老师做了汾河大鲤鱼。小伟问起女友&quot;小美&quot;（何晋美），周眼亮只说她工作忙。
+晚饭时，周妻华老师做了汾河大鲤鱼。小伟问起女友&quot;小美&quot;（何晋美），周志锋只说她工作忙。
 
 [[布置监控任务-&gt;广福寺疑云]]
 [[分析敌人动机-&gt;案情分析]]</tw-passagedata><tw-passagedata pid="19" name="广福寺疑云" tags="" position="900,25" size="100,100">广福寺新购华为电车，管事广福和尚常开车进出。尹国生以鉴赏为名接近广福，赠送白玉扳指，又请吃全素宴。
@@ -302,12 +333,12 @@ UIBar.stow();
 
 指令还提到：&quot;务必拿到图册，那是关键。十年前未完成的任务，这次必须成功。&quot;
 
-周眼亮分析：&quot;他们不仅要盗取现有文物，还要找十年前丢失的图册。&quot;
+周志锋分析：&quot;他们不仅要盗取现有文物，还要找十年前丢失的图册。&quot;
 
 [[立即行动-&gt;决胜时刻]]
 [[完善计划-&gt;雨夜埋伏]]</tw-passagedata><tw-passagedata pid="22" name="技术分析" tags="" position="150,25" size="100,100">技术科报告显示，神秘号码使用一次性加密芯片，难以追踪。但基站定位显示信号曾出现在应县木塔附近。
 
-周眼亮想起副厅长的嘱托：何大山的女儿何晋美已化名&quot;晨语&quot;，以画家身份潜入木塔所在的广福寺。必须确保她的安全。
+周志锋想起副厅长的嘱托：何大山的女儿何晋美已化名&quot;晨语&quot;，以画家身份潜入木塔所在的广福寺。必须确保她的安全。
 
 他需要更多信息来制定行动计划。
 
@@ -319,7 +350,7 @@ UIBar.stow();
 老张提醒晨语：&quot;那人在打听你。&quot;晨语微笑：&quot;狐狸尾巴露出来了。&quot;
 
 [[将计就计-&gt;西山老屋]]
-[[请求撤离-&gt;调整部署]]</tw-passagedata><tw-passagedata pid="24" name="旧案重温" tags="" position="525,25" size="100,100">档案室里，周眼亮重翻十年前卷宗。何大山牺牲前写道：&quot;老A非一人，乃一网。&quot;当时缴获文物百余件，但核心的&quot;木塔修缮工艺图册&quot;始终下落不明。
+[[请求撤离-&gt;调整部署]]</tw-passagedata><tw-passagedata pid="24" name="旧案重温" tags="" position="525,25" size="100,100">档案室里，周志锋重翻十年前卷宗。何大山牺牲前写道：&quot;老A非一人，乃一网。&quot;当时缴获文物百余件，但核心的&quot;木塔修缮工艺图册&quot;始终下落不明。
 
 新线索显示，当年有批文物可能被藏在应县某处。而如今境外势力活动，很可能与这批文物有关。
 
@@ -348,7 +379,7 @@ UIBar.stow();
 
 [[加强伪装-&gt;斋堂偶遇]]
 [[主动试探-&gt;险象环生]]</tw-passagedata><tw-passagedata pid="28" name="盯梢交锋" tags="" position="400,150" size="100,100">&lt;center&gt;
-&lt;img src=&quot;images/wooden1.png&quot; alt=&quot;&quot;  margin= &quot;auto&quot;&gt;
+&lt;img src=&quot;images/wooden1.png&quot; alt=&quot;&quot;  style=&quot;margin: auto;&quot;&gt;
 &lt;/center&gt;
 
 晨语加强了对田雄的监视。她发现田雄每天固定时间在寺内散步，路线总是经过木塔后墙。
@@ -366,12 +397,12 @@ UIBar.stow();
 
 [[案件总结-&gt;意外发现]]
 [[追捕老A-&gt;结局二：暗影犹存]]</tw-passagedata><tw-passagedata pid="30" name="结局一：国宝重光" tags="" position="25,400" size="100,100">&lt;center&gt;
-&lt;img src=&quot;images/wooden3.png&quot; alt=&quot;&quot;  margin= &quot;auto&quot;&gt;
+&lt;img src=&quot;images/wooden3.png&quot; alt=&quot;&quot;  style=&quot;margin: auto;&quot;&gt;
 &lt;/center&gt;
 
 案件告破，尹国生、田中雄一、宋一刀等全部落网。木塔修缮工艺图册失而复得，十年悬案终得昭雪。
 
-何晋美继承父亲遗志，继续守护国宝。周眼亮拍着她的肩：&quot;老何可以安息了。&quot;
+何晋美继承父亲遗志，继续守护国宝。周志锋拍着她的肩：&quot;老何可以安息了。&quot;
 
 木塔在专业修缮中焕发新生。但老A（黄一鹤）逃脱的遗憾，提醒众人：文物保护之路，任重道远。
 
@@ -379,12 +410,12 @@ UIBar.stow();
 
 
 [[重新开始-&gt;Start]]</tw-passagedata><tw-passagedata pid="31" name="结局二：暗影犹存" tags="" position="150,400" size="100,100">&lt;center&gt;
-&lt;img src=&quot;images/wooden4.png&quot; alt=&quot;&quot;  margin= &quot;auto&quot;&gt;
+&lt;img src=&quot;images/wooden4.png&quot; alt=&quot;&quot;  style=&quot;margin: auto;&quot;&gt;
 &lt;/center&gt;
 
 主要嫌犯落网，但老A（黄一鹤）已逃回香港。审讯得知，他背后还有国际文物走私网络。
 
-木塔图册虽已找回，但技术泄露风险仍在。周眼亮望着南方：&quot;战斗还未结束。&quot;
+木塔图册虽已找回，但技术泄露风险仍在。周志锋望着南方：&quot;战斗还未结束。&quot;
 
 何晋美申请加入跨境追逃小组。小伟支持她的决定，两人约定：&quot;等你回来。&quot;
 
@@ -402,7 +433,7 @@ UIBar.stow();
 [[发现运输车辆-&gt;车辆追踪]]
 [[监控资金往来-&gt;资金线索]]</tw-passagedata><tw-passagedata pid="33" name="调整部署" tags="" position="25,150" size="100,100">考虑到晨语已暴露，指挥部决定让她暂时撤离。但晨语坚持：&quot;我若离开，他们会警觉。请派便衣加强外围保护，我继续观察。&quot;
 
-周眼亮同意，但叮嘱：&quot;安全第一。小伟那边我已交代，他不会再来打扰你。&quot;
+周志锋同意，但叮嘱：&quot;安全第一。小伟那边我已交代，他不会再来打扰你。&quot;
 
 便衣干警扮作游客、香客，暗中布控。暴雨将至，山雨欲来风满楼。
 
@@ -418,7 +449,7 @@ UIBar.stow();
 
 但黄一鹤极为狡猾，使用多个假身份，在香港短暂停留后消失。警方判断他可能逃往日本或东南亚。
 
-周眼亮指示：&quot;继续追查，绝不能让主犯逍遥法外。&quot;
+周志锋指示：&quot;继续追查，绝不能让主犯逍遥法外。&quot;
 
 [[审讯抓获人员-&gt;真相浮现]]
 [[返回主战场-&gt;雨夜埋伏]]</tw-passagedata><tw-passagedata pid="36" name="车辆追踪" tags="" position="275,275" size="100,100">侦察员发现宋一刀调集二十多人住进酒店，配发刀具工具，租好两辆中巴。同时，尹国生古董店来了一位&quot;香港富商&quot;黄一鹤。
@@ -435,14 +466,14 @@ UIBar.stow();
 回到阁楼，她冷静包扎伤口，思考对策。
 
 [[加强安防-&gt;暗中保护]]
-[[设下圈套-&gt;反制计划]]</tw-passagedata><tw-passagedata pid="38" name="雨夜埋伏" tags="" position="650,275" size="100,100">暴雨如注。三路警力部署完毕：康明凯、何晋美带人埋伏塔内；周眼亮控制外围车辆；机动队随时支援。
+[[设下圈套-&gt;反制计划]]</tw-passagedata><tw-passagedata pid="38" name="雨夜埋伏" tags="" position="650,275" size="100,100">暴雨如注。三路警力部署完毕：康明凯、何晋美带人埋伏塔内；周志锋控制外围车辆；机动队随时支援。
 
 尹国生、田雄、宋一刀率众潜入。他们分三队，田、宋警戒，尹带人入塔。
 
 当尹国生拧开塔门时，灯光骤亮！&quot;放下武器！&quot;康明凯喝道。
 
 [[塔内搏斗-&gt;制服顽敌]]
-[[外围收网-&gt;人赃并获]]</tw-passagedata><tw-passagedata pid="39" name="风险联络" tags="" position="650,25" size="100,100">周眼亮使用加密频道联系猎鹰（何晋美）。&quot;猎鹰，我是老鹰。你那边情况如何？&quot;
+[[外围收网-&gt;人赃并获]]</tw-passagedata><tw-passagedata pid="39" name="风险联络" tags="" position="650,25" size="100,100">周志锋使用加密频道联系猎鹰（何晋美）。&quot;猎鹰，我是老鹰。你那边情况如何？&quot;
 
 &quot;老鹰，目标已接触广福和尚。尹国生赠送白玉扳指，田雄以礼佛为名住进寺内。我怀疑他们在策划什么。&quot;
 
