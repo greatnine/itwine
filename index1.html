@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互动小说集</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部导航栏 -->
+        <header class="header">
+            <div class="header-left">
+                <button id="menu-toggle" class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="app-title">互动小说集</h1>
+            </div>
+            <div class="header-right">
+                <button id="favorites-toggle" class="favorites-toggle">
+                    <i class="fas fa-heart"></i>
+                </button>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- 左侧目录 -->
+            <aside id="sidebar" class="sidebar">
+                <div class="sidebar-header">
+                    <h2>故事目录</h2>
+                </div>
+                <!-- 故事目录列表容器 - 将由app.js中的故事数据自动填充 -->
+                <div class="story-categories" id="story-categories-container">
+                    <!-- 分类和故事列表将通过JavaScript动态生成 -->
+                </div>
+            </aside>
+
+            <!-- 右侧详情展示区 -->
+            <main class="content">
+                <div id="story-detail" class="story-detail">
+                    <div class="welcome-message">
+                        <i class="fas fa-book-open"></i>
+                        <h2>欢迎来到互动小说集</h2>
+                        <p>请从左侧目录选择一个故事开始阅读<br>(点击左上角目录图表展开目录)</p>
+                    </div>
+                </div>
+                
+                <!-- 收藏页面 -->
+                <div id="favorites-page" class="favorites-page" style="display: none;">
+                    <div class="favorites-header">
+                <h2><i class="fas fa-heart"></i> 我的收藏</h2>
+                <div class="favorites-controls">
+                    <p id="favorites-count">共收藏了 0 个故事</p>
+                    <button id="restore-favorites" class="restore-favorites-btn" title="恢复收藏数据">
+                        <i class="fas fa-undo"></i> 恢复
+                    </button>
+                </div>
+            </div>
+                    <div id="favorites-list" class="favorites-list">
+                        <!-- 收藏的故事将在这里显示 -->
+                    </div>
+                    <div id="empty-favorites" class="empty-favorites">
+                        <i class="fas fa-bookmark"></i>
+                        <h3>还没有收藏任何故事</h3>
+                        <p>浏览故事并点击收藏按钮，将喜欢的故事添加到这里</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/storydata.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/reading.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
