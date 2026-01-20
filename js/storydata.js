@@ -63,7 +63,20 @@ const storiesCollection = {
                 externalLink: "./source/fantasy/精灵王冠/index.html",
                 isRecommended: false,
                 recommendReason: ""
+            },
+            {
+                id: "fantasy_003",
+                title: "魔法书与圣剑",
+                author: "传习者戚",
+                cover: "./source/fantasy/魔法书与圣剑/images/cover.jpg",
+                description: "在一个黑暗世界，你是一名被预言选中的冒险者。古老的魔法书将指引你踏上寻找圣剑的旅程，你将面临无数选择：是拥抱光明还是屈服于黑暗？是独自前行还是结盟伙伴？每一个决定都将影响世界的命运，你的选择将决定不同的结局。准备好迎接这场史诗般的冒险了吗？",
+                tags: "奇幻、冒险,、成长",
+                status: "完结",
+                externalLink: "./source/fantasy/魔法书与圣剑/index.html",
+                isRecommended: true,
+                recommendReason: "2026年年初新作。奇幻题材互动小说，包含丰富的故事分支和多重结局。"
             }
+
         ]
     },
 

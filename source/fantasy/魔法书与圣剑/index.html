@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加载中...</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="book-container">
+        <div class="page">
+            <div class="page-content">
+                <div class="story-title" id="story-title"></div>
+                <div class="story-intro" id="story-intro"></div>
+                <div class="story-text" id="story-content">
+                    <p>正在加载故事数据库...</p>
+                </div>
+                <div class="choices-section" id="choices-container">
+                    <div class="start-section">
+                        <button class="open-book-btn" id="start-btn">打开书页</button>
+                    </div>
+                </div>
+                <div class="navigation-section" id="navigation-controls" style="display: none;">
+                    <button class="nav-btn" id="back-btn">← 上一页</button>
+                    <button class="nav-btn" id="restart-btn">重新开始</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

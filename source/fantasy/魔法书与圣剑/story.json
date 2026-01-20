@@ -1,0 +1,1495 @@
+{
+  "name": "奇幻题材互动小说",
+  "storytitle": "魔法书与圣剑",
+  "version": "2.0",
+  "description": "扩展版奇幻题材互动小说数据库，包含丰富的故事分支和多重结局",
+  "genre": "奇幻",
+  "author": "传习者戚 &Trae <br>qijiuzhu@tsinghua.org.cn",
+  "intro": "在一个被黑暗笼罩的世界里，你将扮演一名被预言选中的冒险者。古老的魔法书将指引你踏上寻找圣剑的旅程，你将面临无数选择：是拥抱光明还是屈服于黑暗？是独自前行还是结盟伙伴？每一个决定都将影响世界的命运，你的选择将决定七个不同的结局。准备好迎接这场史诗般的冒险了吗？",
+  "nodes": [
+    {
+      "id": "fantasy_start",
+      "content": "你在一个古老的图书馆中发现了一本会说话的魔法书。书页泛黄，封面镶嵌着神秘的宝石。当你触摸它时，书本突然开口说话：'被预言选中的人啊，终于等到你了。'",
+      "choices": [
+        { "text": "询问魔法书的来历", "next": "fantasy_origin" },
+        { "text": "了解预言的内容", "next": "fantasy_prophecy" },
+        { "text": "观察周围环境", "next": "fantasy_library" },
+        { "text": "检查自己的身体状况", "next": "fantasy_self_check" }
+      ]
+    },
+    {
+      "id": "fantasy_library",
+      "content": "图书馆内充满了古老的书籍和神秘的卷轴。书架上排列着各种颜色的魔法书，空气中弥漫着墨水和羊皮纸的气味。阳光透过彩色玻璃窗洒下，形成美丽的光影。",
+      "choices": [
+        { "text": "寻找其他魔法书", "next": "fantasy_other_books" },
+        { "text": "询问魔法书关于图书馆的信息", "next": "fantasy_library_info" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_other_books",
+      "content": "你在书架上发现了许多有趣的书籍：一本关于元素魔法的书、一本记载着古代历史的书、一本描述各种魔兽的图鉴，还有一本似乎记载着失传技艺的手稿。",
+      "choices": [
+        { "text": "阅读元素魔法书", "next": "fantasy_element_magic" },
+        { "text": "阅读古代历史书", "next": "fantasy_ancient_history" },
+        { "text": "阅读魔兽图鉴", "next": "fantasy_monster_guide" },
+        { "text": "阅读失传技艺手稿", "next": "fantasy_lost_skills" }
+      ]
+    },
+    {
+      "id": "fantasy_element_magic",
+      "content": "元素魔法书中记载着火、水、土、风四大元素的使用方法。你学会了基础元素操控技巧，感受到体内魔力开始觉醒。",
+      "choices": [
+        { "text": "选择火元素专精", "next": "fantasy_fire_mage" },
+        { "text": "选择水元素专精", "next": "fantasy_water_mage" },
+        { "text": "选择土元素专精", "next": "fantasy_earth_mage" },
+        { "text": "选择风元素专精", "next": "fantasy_wind_mage" },
+        { "text": "保持均衡发展", "next": "fantasy_balanced_mage" }
+      ]
+    },
+    {
+      "id": "fantasy_fire_mage",
+      "content": "你专注于火元素的学习，学会了火焰操控术。你的双手能够召唤炽热的火焰，感受到燃烧的激情在体内涌动。魔法书赞许地点头：'火焰代表着勇气和力量。'",
+      "choices": [
+        { "text": "学习高级火焰魔法", "next": "fantasy_advanced_fire" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_water_mage",
+      "content": "你专注于水元素的学习，学会了水流操控术。你的双手能够召唤清澈的水流，感受到温柔的治愈力量在体内流动。魔法书赞许地点头：'水代表着智慧和治愈。'",
+      "choices": [
+        { "text": "学习高级水系魔法", "next": "fantasy_advanced_water" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_earth_mage",
+      "content": "你专注于土元素的学习，学会了岩石操控术。你的双手能够召唤坚硬的岩石，感受到大地的稳重力量在体内凝聚。魔法书赞许地点头：'土代表着坚韧和守护。'",
+      "choices": [
+        { "text": "学习高级土系魔法", "next": "fantasy_advanced_earth" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_wind_mage",
+      "content": "你专注于风元素的学习，学会了气流操控术。你的双手能够召唤强劲的风暴，感受到自由的气息在体内飘荡。魔法书赞许地点头：'风代表着速度和自由。'",
+      "choices": [
+        { "text": "学习高级风系魔法", "next": "fantasy_advanced_wind" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_balanced_mage",
+      "content": "你选择均衡发展四大元素，虽然进步较慢，但能够灵活运用各种元素的力量。魔法书赞许地点头：'均衡发展虽然艰难，但会让你成为全能的法师。'",
+      "choices": [
+        { "text": "学习元素融合技巧", "next": "fantasy_element_fusion" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_fire",
+      "content": "你学会了火焰爆裂术、火龙息、烈焰护盾等高级火焰魔法。你的火焰力量已经达到了惊人的程度，能够轻易融化钢铁。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_water",
+      "content": "你学会了水流治愈术、冰霜冻结术、水龙卷等高级水系魔法。你的水系力量既能治愈伤者，也能冻结敌人。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_earth",
+      "content": "你学会了岩石护甲术、地震术、岩石巨像召唤等高级土系魔法。你的土系力量能够提供强大的防御和攻击能力。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_wind",
+      "content": "你学会了风刃术、飞行术、风暴召唤等高级风系魔法。你的风系力量让你拥有极高的机动性和攻击速度。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_element_fusion",
+      "content": "你学会了元素融合技巧，能够将不同元素的力量结合，创造出更强大的复合魔法。虽然学习过程艰难，但成果令人惊叹。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_ancient_history",
+      "content": "古代历史书记载着这个世界的悠久历史：曾经存在过一个辉煌的魔法文明，后来因为黑暗势力的入侵而衰落。书中还提到了几个传说中的英雄和他们的故事。",
+      "choices": [
+        { "text": "了解更多关于古代英雄的故事", "next": "fantasy_ancient_heroes" },
+        { "text": "了解黑暗势力的历史", "next": "fantasy_darkness_history" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_ancient_heroes",
+      "content": "书中记载了三位古代英雄：火焰骑士雷德，拥有操控火焰的能力；治愈之女艾拉，能够治愈一切伤痛；风之行者凯尔，速度如风，来去无踪。他们曾联手击败过黑暗势力。",
+      "choices": [
+        { "text": "学习火焰骑士的战斗技巧", "next": "fantasy_flame_knight" },
+        { "text": "学习治愈之女的治愈术", "next": "fantasy_healer" },
+        { "text": "学习风之行者的速度技巧", "next": "fantasy_wind_runner" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_flame_knight",
+      "content": "你学习了火焰骑士雷德的战斗技巧，学会了将火焰与剑术结合的方法。虽然你没有剑，但火焰的力量让你的攻击更加猛烈。",
+      "choices": [
+        { "text": "寻找一把合适的武器", "next": "fantasy_weapon_search" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_healer",
+      "content": "你学习了治愈之女艾拉的治愈术，学会了用魔法治疗各种伤痛。你的双手散发出柔和的光芒，能够治愈伤口和疾病。",
+      "choices": [
+        { "text": "学习更高级的治愈术", "next": "fantasy_advanced_heal" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_wind_runner",
+      "content": "你学习了风之行者凯尔的速度技巧，学会了用风元素增强自己的移动速度。你的身形变得轻盈，行动如风。",
+      "choices": [
+        { "text": "学习更高级的速度技巧", "next": "fantasy_advanced_speed" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_weapon_search",
+      "content": "你在图书馆中寻找合适的武器，最终在角落里发现了一把古老的剑。剑身虽然生锈，但依然散发着强大的气息。",
+      "choices": [
+        { "text": "拿起这把剑", "next": "fantasy_take_sword" },
+        { "text": "继续寻找其他武器", "next": "fantasy_other_weapons" }
+      ]
+    },
+    {
+      "id": "fantasy_take_sword",
+      "content": "当你握住剑柄时，剑身上的锈迹开始脱落，露出闪亮的剑身。剑中传来一个声音：'我是古代英雄雷德的佩剑，终于等到新的主人了。'",
+      "choices": [
+        { "text": "询问剑的来历", "next": "fantasy_sword_origin" },
+        { "text": "学习剑术技巧", "next": "fantasy_sword_skills" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_sword_origin",
+      "content": "剑说道：'我是雷德之剑，曾经的主人雷德是古代最伟大的火焰骑士。他在与黑暗之王的战斗中牺牲，将我留在这里等待新的主人。'",
+      "choices": [
+        { "text": "学习剑术技巧", "next": "fantasy_sword_skills" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_sword_skills",
+      "content": "剑开始传授你剑术技巧，你学会了火焰剑术、剑气斩、剑盾合一等高级技巧。你的剑术水平突飞猛进。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_other_weapons",
+      "content": "你继续在图书馆中寻找，发现了一把弓、一把法杖和一面盾牌。每件武器都散发着不同的气息。",
+      "choices": [
+        { "text": "选择弓箭", "next": "fantasy_archer" },
+        { "text": "选择法杖", "next": "fantasy_staff" },
+        { "text": "选择盾牌", "next": "fantasy_shield" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_archer",
+      "content": "你选择了弓箭，这把弓能够自动生成箭矢，并且箭矢带有风元素的加成。你学会了基本的射箭技巧，能够精准地击中目标。",
+      "choices": [
+        { "text": "学习高级射箭技巧", "next": "fantasy_advanced_archery" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_staff",
+      "content": "你选择了法杖，这把法杖能够增强你的魔法力量，并且内置了多种基础魔法。你学会了如何使用法杖施放魔法。",
+      "choices": [
+        { "text": "学习高级魔法技巧", "next": "fantasy_advanced_magic" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_shield",
+      "content": "你选择了盾牌，这面盾牌能够提供强大的防御，并且能够反弹敌人的攻击。你学会了如何使用盾牌进行防御和反击。",
+      "choices": [
+        { "text": "学习高级防御技巧", "next": "fantasy_advanced_defense" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_heal",
+      "content": "你学会了群体治愈术、复活术、净化术等高级治愈术。你的治愈能力已经达到了大师级别，能够拯救濒死的生命。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找需要帮助的人", "next": "fantasy_help_others" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_speed",
+      "content": "你学会了瞬移术、风之翼、极速闪避等高级速度技巧。你的速度已经达到了惊人的程度，能够在瞬间移动到任何地方。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_archery",
+      "content": "你学会了多重箭、箭雨、追踪箭等高级射箭技巧。你的箭术已经达到了大师级别，能够同时攻击多个目标。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_magic",
+      "content": "你学会了禁咒、魔法阵、魔法融合等高级魔法技巧。你的魔法力量已经达到了大师级别，能够施展强大的禁咒。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_defense",
+      "content": "你学会了绝对防御、盾墙、反击风暴等高级防御技巧。你的防御能力已经达到了大师级别，能够抵挡任何攻击。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "寻找实战机会", "next": "fantasy_combat_training" }
+      ]
+    },
+    {
+      "id": "fantasy_monster_guide",
+      "content": "魔兽图鉴中记载着各种魔兽的详细信息：火焰巨龙、冰霜巨人、雷霆狮鹫、暗影蜘蛛等。每种魔兽都有其弱点和应对方法。",
+      "choices": [
+        { "text": "学习火焰巨龙的弱点", "next": "fantasy_dragon_weakness" },
+        { "text": "学习冰霜巨人的弱点", "next": "fantasy_giant_weakness" },
+        { "text": "学习雷霆狮鹫的弱点", "next": "fantasy_griffin_weakness" },
+        { "text": "学习暗影蜘蛛的弱点", "next": "fantasy_spider_weakness" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_dragon_weakness",
+      "content": "火焰巨龙的弱点是腹部和眼睛。它的火焰吐息虽然强大，但冷却时间较长。水系魔法对它有额外伤害。",
+      "choices": [
+        { "text": "学习更多魔兽弱点", "next": "fantasy_monster_guide" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_giant_weakness",
+      "content": "冰霜巨人的弱点是关节和头部。它的冰霜攻击虽然强大，但移动速度较慢。火系魔法对它有额外伤害。",
+      "choices": [
+        { "text": "学习更多魔兽弱点", "next": "fantasy_monster_guide" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_griffin_weakness",
+      "content": "雷霆狮鹫的弱点是翅膀和眼睛。它的雷霆攻击虽然强大，但需要蓄力。土系魔法对它有额外伤害。",
+      "choices": [
+        { "text": "学习更多魔兽弱点", "next": "fantasy_monster_guide" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_spider_weakness",
+      "content": "暗影蜘蛛的弱点是腹部和毒囊。它的暗影攻击虽然强大，但畏惧光明。火系魔法对它有额外伤害。",
+      "choices": [
+        { "text": "学习更多魔兽弱点", "next": "fantasy_monster_guide" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_lost_skills",
+      "content": "失传技艺手稿中记载着许多已经失传的技艺：炼金术、附魔术、召唤术、幻术等。每种技艺都需要极高的天赋和努力才能掌握。",
+      "choices": [
+        { "text": "学习炼金术", "next": "fantasy_alchemy" },
+        { "text": "学习附魔术", "next": "fantasy_enchanting" },
+        { "text": "学习召唤术", "next": "fantasy_summoning" },
+        { "text": "学习幻术", "next": "fantasy_illusion" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_alchemy",
+      "content": "你开始学习炼金术，学会了制作各种药水：治疗药水、力量药水、速度药水、隐身药水等。炼金术虽然复杂，但效果显著。",
+      "choices": [
+        { "text": "学习高级炼金术", "next": "fantasy_advanced_alchemy" },
+        { "text": "制作一些基础药水", "next": "fantasy_make_potions" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_enchanting",
+      "content": "你开始学习附魔术，学会了给武器和装备附魔：火焰附魔、冰霜附魔、雷电附魔、神圣附魔等。附魔术能够大幅提升装备的性能。",
+      "choices": [
+        { "text": "学习高级附魔术", "next": "fantasy_advanced_enchanting" },
+        { "text": "给装备附魔", "next": "fantasy_enchant_equipment" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_summoning",
+      "content": "你开始学习召唤术，学会了召唤各种生物：元素精灵、魔兽、亡灵等。召唤术能够为你提供强大的助力。",
+      "choices": [
+        { "text": "学习高级召唤术", "next": "fantasy_advanced_summoning" },
+        { "text": "召唤一个生物", "next": "fantasy_summon_creature" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_illusion",
+      "content": "你开始学习幻术，学会了制造各种幻象：隐身术、分身术、幻影攻击等。幻术能够迷惑敌人，制造战术优势。",
+      "choices": [
+        { "text": "学习高级幻术", "next": "fantasy_advanced_illusion" },
+        { "text": "使用幻术迷惑敌人", "next": "fantasy_use_illusion" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_alchemy",
+      "content": "你学会了高级炼金术，能够制作传说级药水：复活药水、永生药水、神力药水等。这些药水拥有神奇的效果，但制作难度极高。",
+      "choices": [
+        { "text": "制作传说级药水", "next": "fantasy_make_legendary_potions" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_make_potions",
+      "content": "你制作了一些基础药水：治疗药水x5、力量药水x3、速度药水x3。这些药水将在冒险中发挥重要作用。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "继续制作药水", "next": "fantasy_make_potions" }
+      ]
+    },
+    {
+      "id": "fantasy_make_legendary_potions",
+      "content": "你尝试制作传说级药水，经过多次失败后，终于成功制作了一瓶复活药水。这瓶药水能够复活刚刚死去的人，效果神奇。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "继续制作传说级药水", "next": "fantasy_make_legendary_potions" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_enchanting",
+      "content": "你学会了高级附魔术，能够给装备附魔传说级附魔：火焰神附魔、冰霜神附魔、雷电神附魔、神圣神附魔等。这些附魔拥有强大的效果。",
+      "choices": [
+        { "text": "给装备附魔传说级附魔", "next": "fantasy_enchant_legendary" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_enchant_equipment",
+      "content": "你给自己的装备附魔了基础附魔：火焰附魔、冰霜附魔。装备的性能得到了显著提升。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "继续附魔装备", "next": "fantasy_enchant_equipment" }
+      ]
+    },
+    {
+      "id": "fantasy_enchant_legendary",
+      "content": "你给自己的装备附魔了传说级附魔：火焰神附魔。装备的性能得到了巨大的提升，拥有了毁灭性的力量。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "继续附魔装备", "next": "fantasy_enchant_legendary" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_summoning",
+      "content": "你学会了高级召唤术，能够召唤传说级生物：火焰巨龙、冰霜巨人、雷霆狮鹫、暗影蜘蛛等。这些生物拥有强大的力量。",
+      "choices": [
+        { "text": "召唤传说级生物", "next": "fantasy_summon_legendary" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_summon_creature",
+      "content": "你召唤了一只元素精灵，它能够为你提供元素魔法支持。元素精灵虽然弱小，但忠诚可靠。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "继续召唤生物", "next": "fantasy_summon_creature" }
+      ]
+    },
+    {
+      "id": "fantasy_summon_legendary",
+      "content": "你召唤了一只火焰巨龙，它拥有强大的火焰力量。火焰巨龙虽然难以控制，但一旦成为盟友，将提供巨大的帮助。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "继续召唤传说级生物", "next": "fantasy_summon_legendary" }
+      ]
+    },
+    {
+      "id": "fantasy_advanced_illusion",
+      "content": "你学会了高级幻术，能够制造传说级幻象：真实幻境、心灵控制、时空幻术等。这些幻术几乎无法被识破。",
+      "choices": [
+        { "text": "使用传说级幻术", "next": "fantasy_use_legendary_illusion" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_use_illusion",
+      "content": "你使用了隐身术，成功隐藏了自己的身形。隐身术虽然持续时间有限，但在关键时刻能够救命。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "继续使用幻术", "next": "fantasy_use_illusion" }
+      ]
+    },
+    {
+      "id": "fantasy_use_legendary_illusion",
+      "content": "你使用了真实幻境，将敌人困在了虚假的幻境中。真实幻境虽然消耗巨大，但效果惊人。",
+      "choices": [
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" },
+        { "text": "继续使用传说级幻术", "next": "fantasy_use_legendary_illusion" }
+      ]
+    },
+    {
+      "id": "fantasy_library_info",
+      "content": "魔法书说道：'这座图书馆是古代魔法文明留下的遗迹，收藏着无数珍贵的知识和宝物。只有被选中的人才能进入这里。'",
+      "choices": [
+        { "text": "询问图书馆的其他秘密", "next": "fantasy_library_secrets" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_library_secrets",
+      "content": "魔法书继续说道：'图书馆深处隐藏着一个传送阵，能够直接传送到任何地方。但传送阵需要特定的钥匙才能启动。'",
+      "choices": [
+        { "text": "寻找传送阵的钥匙", "next": "fantasy_portal_key" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_portal_key",
+      "content": "你在图书馆中寻找传送阵的钥匙，最终在魔法书内部发现了一把金色的钥匙。钥匙散发着神秘的光芒，似乎蕴含着强大的力量。",
+      "choices": [
+        { "text": "前往传送阵", "next": "fantasy_portal" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_portal",
+      "content": "你找到了传送阵，用金色钥匙启动了它。传送阵发出耀眼的光芒，你感到身体被吸入了一个神秘的空间。",
+      "choices": [
+        { "text": "前往迷雾森林", "next": "fantasy_forest" },
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_dark_king_lair" },
+        { "text": "前往古代遗迹", "next": "fantasy_ancient_ruins" },
+        { "text": "返回图书馆", "next": "fantasy_library" }
+      ]
+    },
+    {
+      "id": "fantasy_self_check",
+      "content": "你检查自己的身体状况，发现自己拥有魔法天赋，能够感知和操控魔力。你的身体虽然普通，但潜力无限。",
+      "choices": [
+        { "text": "测试自己的魔法能力", "next": "fantasy_test_magic" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_test_magic",
+      "content": "你尝试使用魔法，成功召唤出了一团小火焰。虽然火焰很小，但这证明你确实拥有魔法天赋。",
+      "choices": [
+        { "text": "学习更多魔法", "next": "fantasy_element_magic" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    },
+    {
+      "id": "fantasy_origin",
+      "content": "'我是远古魔法师的智慧结晶，'魔法书说道，'我的使命是引导被选中者完成拯救世界的重任。黑暗势力正在苏醒，时间不多了。'",
+      "choices": [
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" },
+        { "text": "询问更多关于黑暗势力的信息", "next": "fantasy_darkness" },
+        { "text": "询问古代魔法文明的历史", "next": "fantasy_ancient_history" },
+        { "text": "询问自己的身世", "next": "fantasy_identity" }
+      ]
+    },
+    {
+      "id": "fantasy_identity",
+      "content": "魔法书沉默了片刻，然后说道：'你是古代英雄的后代，你的祖先曾经拯救过这个世界。现在，轮到你承担这个责任了。'",
+      "choices": [
+        { "text": "询问祖先的故事", "next": "fantasy_ancestor_story" },
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" }
+      ]
+    },
+    {
+      "id": "fantasy_ancestor_story",
+      "content": "魔法书开始讲述你祖先的故事：'你的祖先是一位伟大的英雄，曾经联合其他英雄击败了黑暗之王。但黑暗之王并没有完全消失，只是被封印了。现在，封印正在松动。'",
+      "choices": [
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" },
+        { "text": "询问如何加强封印", "next": "fantasy_seal_info" }
+      ]
+    },
+    {
+      "id": "fantasy_seal_info",
+      "content": "魔法书说道：'封印需要三件神器才能加强：圣剑、圣盾和圣杯。这三件神器分别藏在三个不同的地方。'",
+      "choices": [
+        { "text": "寻找圣剑", "next": "fantasy_sword_location" },
+        { "text": "寻找圣盾", "next": "fantasy_shield_location" },
+        { "text": "寻找圣杯", "next": "fantasy_cup_location" },
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" }
+      ]
+    },
+    {
+      "id": "fantasy_prophecy",
+      "content": "'预言中提到，'魔法书说道，'当黑暗重新降临，一位被选中的英雄将出现，他/她将拥有古代英雄的血统，能够使用失传的魔法，最终击败黑暗之王，拯救世界。'",
+      "choices": [
+        { "text": "询问如何确认自己就是被选中的人", "next": "fantasy_confirmation" },
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" }
+      ]
+    },
+    {
+      "id": "fantasy_confirmation",
+      "content": "魔法书发出一道光芒，照在你身上。光芒中，你看到了自己体内流淌着古代英雄的血脉。魔法书说道：'你确实是被选中的人。'",
+      "choices": [
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" },
+        { "text": "询问自己的能力", "next": "fantasy_abilities" }
+      ]
+    },
+    {
+      "id": "fantasy_abilities",
+      "content": "魔法书说道：'你拥有强大的魔法天赋，能够学习和使用各种魔法。你的身体虽然普通，但潜力无限。只要努力，你将成为最强的英雄。'",
+      "choices": [
+        { "text": "学习魔法", "next": "fantasy_element_magic" },
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" }
+      ]
+    },
+    {
+      "id": "fantasy_darkness",
+      "content": "'黑暗之王是邪恶力量的化身，'魔法书说道，'他曾经统治过这个世界，后来被古代英雄封印。现在，封印正在松动，黑暗之王即将苏醒。'",
+      "choices": [
+        { "text": "询问黑暗之王的能力", "next": "fantasy_dark_king_power" },
+        { "text": "询问如何击败黑暗之王", "next": "fantasy_defeat_dark_king" },
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_king_power",
+      "content": "魔法书说道：'黑暗之王拥有强大的黑暗魔法，能够操控亡灵、召唤恶魔、施展禁咒。他的力量几乎无穷无尽，只有圣剑才能对他造成致命伤害。'",
+      "choices": [
+        { "text": "询问如何获得圣剑", "next": "fantasy_sword_location" },
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" }
+      ]
+    },
+    {
+      "id": "fantasy_defeat_dark_king",
+      "content": "魔法书说道：'要击败黑暗之王，你需要收集三件神器：圣剑、圣盾和圣杯。只有集齐这三件神器，才能彻底击败黑暗之王。'",
+      "choices": [
+        { "text": "寻找圣剑", "next": "fantasy_sword_location" },
+        { "text": "寻找圣盾", "next": "fantasy_shield_location" },
+        { "text": "寻找圣杯", "next": "fantasy_cup_location" },
+        { "text": "接受使命，开始冒险", "next": "fantasy_mission" }
+      ]
+    },
+    {
+      "id": "fantasy_mission",
+      "content": "魔法书发出柔和的光芒：'你的第一个任务是前往迷雾森林，寻找失落的圣剑。只有圣剑才能对抗即将苏醒的黑暗之王。'",
+      "choices": [
+        { "text": "立即出发前往迷雾森林", "next": "fantasy_forest" },
+        { "text": "询问圣剑的具体位置", "next": "fantasy_sword_location" },
+        { "text": "准备后再出发", "next": "fantasy_preparation" }
+      ]
+    },
+    {
+      "id": "fantasy_preparation",
+      "content": "你决定在出发前做好准备。你可以在图书馆中学习魔法、寻找装备、制作药水等。",
+      "choices": [
+        { "text": "学习魔法", "next": "fantasy_element_magic" },
+        { "text": "寻找装备", "next": "fantasy_weapon_search" },
+        { "text": "制作药水", "next": "fantasy_make_potions" },
+        { "text": "准备完成，出发", "next": "fantasy_forest" }
+      ]
+    },
+    {
+      "id": "fantasy_sword_location",
+      "content": "魔法书说道：'圣剑藏在迷雾森林中的古老神殿里。神殿被魔法结界保护着，只有纯净的心灵才能进入。'",
+      "choices": [
+        { "text": "前往迷雾森林", "next": "fantasy_forest" },
+        { "text": "询问如何净化心灵", "next": "fantasy_purify_heart" }
+      ]
+    },
+    {
+      "id": "fantasy_shield_location",
+      "content": "魔法书说道：'圣盾藏在雪山之巅的冰霜神殿里。神殿被冰霜巨人守护着，只有击败冰霜巨人才能获得圣盾。'",
+      "choices": [
+        { "text": "前往雪山", "next": "fantasy_snow_mountain" },
+        { "text": "询问冰霜巨人的弱点", "next": "fantasy_giant_weakness" }
+      ]
+    },
+    {
+      "id": "fantasy_cup_location",
+      "content": "魔法书说道：'圣杯藏在沙漠深处的遗迹里。遗迹被机关和陷阱保护着，只有智慧才能通过。'",
+      "choices": [
+        { "text": "前往沙漠", "next": "fantasy_desert" },
+        { "text": "询问遗迹的机关", "next": "fantasy_ruins_traps" }
+      ]
+    },
+    {
+      "id": "fantasy_purify_heart",
+      "content": "魔法书说道：'要净化心灵，你需要回想自己内心最真实的愿望。是拯救世界？保护亲人？还是追求力量？'",
+      "choices": [
+        { "text": "回想拯救世界的决心", "next": "fantasy_save_world" },
+        { "text": "回想保护亲人的愿望", "next": "fantasy_protect_family" },
+        { "text": "回想追求力量的欲望", "next": "fantasy_seek_power" }
+      ]
+    },
+    {
+      "id": "fantasy_save_world",
+      "content": "你回想拯救世界的决心，感受到内心的正义和勇气。你的心灵得到了净化，散发出纯净的光芒。",
+      "choices": [
+        { "text": "前往迷雾森林", "next": "fantasy_forest" }
+      ]
+    },
+    {
+      "id": "fantasy_protect_family",
+      "content": "你回想保护亲人的愿望，感受到内心的爱和责任。你的心灵得到了净化，散发出温暖的光芒。",
+      "choices": [
+        { "text": "前往迷雾森林", "next": "fantasy_forest" }
+      ]
+    },
+    {
+      "id": "fantasy_seek_power",
+      "content": "你回想追求力量的欲望，感受到内心的野心和渴望。你的心灵没有得到净化，反而变得更加黑暗。",
+      "choices": [
+        { "text": "放弃净化，前往迷雾森林", "next": "fantasy_forest_dark" },
+        { "text": "重新选择净化方式", "next": "fantasy_purify_heart" }
+      ]
+    },
+    {
+      "id": "fantasy_forest",
+      "content": "迷雾森林中弥漫着神秘的雾气，古老的树木仿佛在低语。你沿着魔法书指引的方向前进，发现了一座被藤蔓覆盖的古老神殿。",
+      "choices": [
+        { "text": "进入神殿探索", "next": "fantasy_temple" },
+        { "text": "在神殿周围寻找线索", "next": "fantasy_clues" },
+        { "text": "询问魔法书关于神殿的信息", "next": "fantasy_temple_info" }
+      ]
+    },
+    {
+      "id": "fantasy_forest_dark",
+      "content": "迷雾森林中弥漫着诡异的雾气，古老的树木仿佛在发出警告。你感觉到森林中充满了危险，但为了追求力量，你决定继续前进。",
+      "choices": [
+        { "text": "进入神殿探索", "next": "fantasy_temple_dark" },
+        { "text": "在神殿周围寻找线索", "next": "fantasy_clues_dark" }
+      ]
+    },
+    {
+      "id": "fantasy_temple",
+      "content": "神殿内部充满了神秘的符文和壁画。在祭坛中央，你发现了一把闪烁着光芒的圣剑，但剑被一个强大的魔法结界保护着。",
+      "choices": [
+        { "text": "尝试破解魔法结界", "next": "fantasy_barrier" },
+        { "text": "研究壁画的含义", "next": "fantasy_murals" },
+        { "text": "询问魔法书如何解除结界", "next": "fantasy_barrier_help" }
+      ]
+    },
+    {
+      "id": "fantasy_temple_dark",
+      "content": "神殿内部充满了黑暗的气息，符文和壁画都散发着邪恶的光芒。在祭坛中央，你发现了一把闪烁着黑暗光芒的剑，剑被一个强大的黑暗结界保护着。",
+      "choices": [
+        { "text": "尝试破解黑暗结界", "next": "fantasy_dark_barrier" },
+        { "text": "研究黑暗壁画的含义", "next": "fantasy_dark_murals" }
+      ]
+    },
+    {
+      "id": "fantasy_clues",
+      "content": "你在神殿周围发现了一些线索：一块石碑上刻着古老的文字，地面上有一些奇怪的符号，墙壁上还有一些模糊的印记。",
+      "choices": [
+        { "text": "研究石碑上的文字", "next": "fantasy_stone_tablet" },
+        { "text": "研究地面上的符号", "next": "fantasy_ground_symbols" },
+        { "text": "研究墙壁上的印记", "next": "fantasy_wall_marks" },
+        { "text": "进入神殿探索", "next": "fantasy_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_clues_dark",
+      "content": "你在神殿周围发现了一些线索：一块黑色石碑上刻着邪恶的文字，地面上有一些黑暗的符号，墙壁上还有一些血红的印记。",
+      "choices": [
+        { "text": "研究黑色石碑上的文字", "next": "fantasy_dark_stone_tablet" },
+        { "text": "研究地面上的黑暗符号", "next": "fantasy_dark_ground_symbols" },
+        { "text": "研究墙壁上的血红印记", "next": "fantasy_dark_wall_marks" },
+        { "text": "进入神殿探索", "next": "fantasy_temple_dark" }
+      ]
+    },
+    {
+      "id": "fantasy_temple_info",
+      "content": "魔法书说道：'这座神殿是古代英雄雷德建造的，用来存放圣剑。神殿被魔法结界保护着，只有纯净的心灵才能进入。'",
+      "choices": [
+        { "text": "进入神殿探索", "next": "fantasy_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_barrier",
+      "content": "你集中精神，试图理解结界的构造。魔法书突然发出光芒：'结界需要纯净的心灵才能解除。回想你内心最真实的愿望。'",
+      "choices": [
+        { "text": "回想拯救世界的决心", "next": "fantasy_success" },
+        { "text": "回想保护亲人的愿望", "next": "fantasy_family" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_barrier",
+      "content": "你集中精神，试图理解黑暗结界的构造。黑暗的力量侵蚀着你的心灵，你感觉到自己正在变得邪恶。",
+      "choices": [
+        { "text": "继续破解黑暗结界", "next": "fantasy_dark_success" },
+        { "text": "放弃破解，离开神殿", "next": "fantasy_flee_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_murals",
+      "content": "壁画上描绘着古代英雄雷德的故事：他如何获得圣剑，如何与黑暗之王战斗，如何最终封印黑暗之王。壁画中还隐藏着解除结界的线索。",
+      "choices": [
+        { "text": "寻找解除结界的线索", "next": "fantasy_barrier_clue" },
+        { "text": "继续研究壁画", "next": "fantasy_murals_detail" },
+        { "text": "尝试破解魔法结界", "next": "fantasy_barrier" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_murals",
+      "content": "黑暗壁画上描绘着黑暗之王的故事：他如何获得黑暗力量，如何统治世界，如何被古代英雄封印。壁画中还隐藏着解除黑暗结界的线索。",
+      "choices": [
+        { "text": "寻找解除黑暗结界的线索", "next": "fantasy_dark_barrier_clue" },
+        { "text": "继续研究黑暗壁画", "next": "fantasy_dark_murals_detail" },
+        { "text": "尝试破解黑暗结界", "next": "fantasy_dark_barrier" }
+      ]
+    },
+    {
+      "id": "fantasy_barrier_help",
+      "content": "魔法书说道：'要解除结界，你需要回想自己内心最真实的愿望。只有纯净的心灵才能通过结界的考验。'",
+      "choices": [
+        { "text": "回想拯救世界的决心", "next": "fantasy_success" },
+        { "text": "回想保护亲人的愿望", "next": "fantasy_family" }
+      ]
+    },
+    {
+      "id": "fantasy_success",
+      "content": "结界缓缓消散，圣剑的光芒照亮了整个神殿。你握住圣剑，感受到强大的力量在体内流动。魔法书说道：'现在，你已准备好面对黑暗之王。'",
+      "choices": [
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle" },
+        { "text": "先寻找盟友", "next": "fantasy_allies" },
+        { "text": "寻找其他神器", "next": "fantasy_other_artifacts" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_success",
+      "content": "黑暗结界缓缓消散，黑暗剑的光芒照亮了整个神殿。你握住黑暗剑，感受到强大的黑暗力量在体内流动。魔法书警告道：'小心，黑暗的力量会侵蚀你的心灵。'",
+      "choices": [
+        { "text": "接受黑暗力量", "next": "fantasy_embrace_darkness" },
+        { "text": "抵抗黑暗力量", "next": "fantasy_resist_darkness" }
+      ]
+    },
+    {
+      "id": "fantasy_family",
+      "content": "结界缓缓消散，圣剑的光芒照亮了整个神殿。你握住圣剑，感受到温暖的力量在体内流动。魔法书说道：'你的爱和保护欲让你更加强大。'",
+      "choices": [
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle" },
+        { "text": "先寻找盟友", "next": "fantasy_allies" },
+        { "text": "寻找其他神器", "next": "fantasy_other_artifacts" }
+      ]
+    },
+    {
+      "id": "fantasy_embrace_darkness",
+      "content": "你接受了黑暗力量，感觉到自己的力量得到了巨大的提升。但你的心灵也开始变得黑暗，你开始渴望更多的力量。",
+      "choices": [
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_dark_final_battle" },
+        { "text": "寻找更多的黑暗力量", "next": "fantasy_seek_more_darkness" }
+      ]
+    },
+    {
+      "id": "fantasy_resist_darkness",
+      "content": "你努力抵抗黑暗力量，虽然消耗了大量的精力，但成功保住了自己的心灵。魔法书赞许地点头：'你的意志力令人敬佩。'",
+      "choices": [
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle" },
+        { "text": "先寻找盟友", "next": "fantasy_allies" }
+      ]
+    },
+    {
+      "id": "fantasy_flee_temple",
+      "content": "你决定放弃破解黑暗结界，逃离了神殿。虽然你没有获得黑暗剑，但你保住了自己的心灵。",
+      "choices": [
+        { "text": "返回图书馆", "next": "fantasy_library" },
+        { "text": "寻找其他神器", "next": "fantasy_other_artifacts" }
+      ]
+    },
+    {
+      "id": "fantasy_barrier_clue",
+      "content": "你在壁画中发现了解除结界的线索：结界需要三种元素的力量才能解除：火、水、土。你需要同时使用这三种元素的力量。",
+      "choices": [
+        { "text": "尝试使用三种元素的力量", "next": "fantasy_three_elements" },
+        { "text": "继续研究壁画", "next": "fantasy_murals_detail" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_barrier_clue",
+      "content": "你在黑暗壁画中发现了解除黑暗结界的线索：结界需要献祭自己的部分生命力才能解除。你愿意付出这个代价吗？",
+      "choices": [
+        { "text": "愿意献祭生命力", "next": "fantasy_sacrifice_life" },
+        { "text": "不愿意，寻找其他方法", "next": "fantasy_other_method" }
+      ]
+    },
+    {
+      "id": "fantasy_murals_detail",
+      "content": "壁画详细描绘了古代英雄雷德的冒险故事：他如何获得圣剑，如何结识盟友，如何与黑暗之王战斗。这些故事给了你很多启发。",
+      "choices": [
+        { "text": "寻找解除结界的线索", "next": "fantasy_barrier_clue" },
+        { "text": "尝试破解魔法结界", "next": "fantasy_barrier" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_murals_detail",
+      "content": "黑暗壁画详细描绘了黑暗王国的历史：黑暗之王如何获得黑暗力量，如何建立黑暗王国，如何被古代英雄封印。这些故事让你感到恐惧。",
+      "choices": [
+        { "text": "寻找解除黑暗结界的线索", "next": "fantasy_dark_barrier_clue" },
+        { "text": "尝试破解黑暗结界", "next": "fantasy_dark_barrier" }
+      ]
+    },
+    {
+      "id": "fantasy_three_elements",
+      "content": "你同时使用火、水、土三种元素的力量，结界开始震动。经过一番努力，结界终于消散，圣剑的光芒照亮了整个神殿。",
+      "choices": [
+        { "text": "握住圣剑", "next": "fantasy_success" }
+      ]
+    },
+    {
+      "id": "fantasy_sacrifice_life",
+      "content": "你献祭了自己的部分生命力，黑暗结界开始消散。虽然你感到虚弱，但成功获得了黑暗剑。黑暗剑散发着强大的黑暗力量。",
+      "choices": [
+        { "text": "握住黑暗剑", "next": "fantasy_dark_success" }
+      ]
+    },
+    {
+      "id": "fantasy_other_method",
+      "content": "你寻找其他解除黑暗结界的方法，最终发现可以使用光系魔法来对抗黑暗结界。虽然你没有光系魔法，但可以尝试学习。",
+      "choices": [
+        { "text": "学习光系魔法", "next": "fantasy_light_magic" },
+        { "text": "放弃破解，离开神殿", "next": "fantasy_flee_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_light_magic",
+      "content": "你开始学习光系魔法，虽然学习过程艰难，但最终学会了基础的光系魔法。你用光系魔法对抗黑暗结界，成功消散了结界。",
+      "choices": [
+        { "text": "握住圣剑", "next": "fantasy_success" }
+      ]
+    },
+    {
+      "id": "fantasy_stone_tablet",
+      "content": "石碑上刻着古老的文字：'只有纯净的心灵才能通过结界的考验。回想你内心最真实的愿望，结界自会消散。'",
+      "choices": [
+        { "text": "回想拯救世界的决心", "next": "fantasy_success" },
+        { "text": "回想保护亲人的愿望", "next": "fantasy_family" },
+        { "text": "继续寻找其他线索", "next": "fantasy_ground_symbols" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_stone_tablet",
+      "content": "黑色石碑上刻着邪恶的文字：'只有献祭自己的生命力才能通过黑暗结界的考验。你愿意付出这个代价吗？'",
+      "choices": [
+        { "text": "愿意献祭生命力", "next": "fantasy_sacrifice_life" },
+        { "text": "不愿意，寻找其他方法", "next": "fantasy_other_method" },
+        { "text": "继续寻找其他线索", "next": "fantasy_dark_ground_symbols" }
+      ]
+    },
+    {
+      "id": "fantasy_ground_symbols",
+      "content": "地面上的符号是古代魔法阵的一部分，它们指向神殿的入口。符号中还隐藏着解除结界的提示。",
+      "choices": [
+        { "text": "研究符号中的提示", "next": "fantasy_symbols_hint" },
+        { "text": "继续寻找其他线索", "next": "fantasy_wall_marks" },
+        { "text": "进入神殿探索", "next": "fantasy_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_ground_symbols",
+      "content": "地面上的黑暗符号是古代黑暗魔法阵的一部分，它们指向神殿的入口。符号中还隐藏着解除黑暗结界的提示。",
+      "choices": [
+        { "text": "研究黑暗符号中的提示", "next": "fantasy_dark_symbols_hint" },
+        { "text": "继续寻找其他线索", "next": "fantasy_dark_wall_marks" },
+        { "text": "进入神殿探索", "next": "fantasy_temple_dark" }
+      ]
+    },
+    {
+      "id": "fantasy_wall_marks",
+      "content": "墙壁上的印记是古代英雄留下的，它们记录了英雄们的心路历程。印记中还隐藏着解除结界的秘密。",
+      "choices": [
+        { "text": "研究印记中的秘密", "next": "fantasy_marks_secret" },
+        { "text": "进入神殿探索", "next": "fantasy_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_wall_marks",
+      "content": "墙壁上的血红印记是黑暗之王留下的，它们记录了黑暗王国的历史。印记中还隐藏着解除黑暗结界的秘密。",
+      "choices": [
+        { "text": "研究血红印记中的秘密", "next": "fantasy_dark_marks_secret" },
+        { "text": "进入神殿探索", "next": "fantasy_temple_dark" }
+      ]
+    },
+    {
+      "id": "fantasy_symbols_hint",
+      "content": "符号中的提示是：'结界需要三种元素的力量才能解除：火、水、土。你需要同时使用这三种元素的力量。'",
+      "choices": [
+        { "text": "尝试使用三种元素的力量", "next": "fantasy_three_elements" },
+        { "text": "进入神殿探索", "next": "fantasy_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_symbols_hint",
+      "content": "黑暗符号中的提示是：'结界需要献祭自己的部分生命力才能解除。你愿意付出这个代价吗？'",
+      "choices": [
+        { "text": "愿意献祭生命力", "next": "fantasy_sacrifice_life" },
+        { "text": "不愿意，寻找其他方法", "next": "fantasy_other_method" },
+        { "text": "进入神殿探索", "next": "fantasy_temple_dark" }
+      ]
+    },
+    {
+      "id": "fantasy_marks_secret",
+      "content": "印记中的秘密是：'结界需要纯净的心灵才能解除。回想你内心最真实的愿望，结界自会消散。'",
+      "choices": [
+        { "text": "回想拯救世界的决心", "next": "fantasy_success" },
+        { "text": "回想保护亲人的愿望", "next": "fantasy_family" },
+        { "text": "进入神殿探索", "next": "fantasy_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_marks_secret",
+      "content": "血红印记中的秘密是：'结界需要献祭自己的部分生命力才能解除。你愿意付出这个代价吗？'",
+      "choices": [
+        { "text": "愿意献祭生命力", "next": "fantasy_sacrifice_life" },
+        { "text": "不愿意，寻找其他方法", "next": "fantasy_other_method" },
+        { "text": "进入神殿探索", "next": "fantasy_temple_dark" }
+      ]
+    },
+    {
+      "id": "fantasy_allies",
+      "content": "你决定先寻找盟友。魔法书说道：'你可以前往人类王国、精灵森林、矮人矿坑寻找盟友。每个种族都有强大的战士和法师。'",
+      "choices": [
+        { "text": "前往人类王国", "next": "fantasy_human_kingdom" },
+        { "text": "前往精灵森林", "next": "fantasy_elf_forest" },
+        { "text": "前往矮人矿坑", "next": "fantasy_dwarf_mine" },
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle" }
+      ]
+    },
+    {
+      "id": "fantasy_other_artifacts",
+      "content": "你决定先寻找其他神器。魔法书说道：'还有两件神器：圣盾和圣杯。圣盾藏在雪山之巅，圣杯藏在沙漠深处。'",
+      "choices": [
+        { "text": "前往雪山寻找圣盾", "next": "fantasy_snow_mountain" },
+        { "text": "前往沙漠寻找圣杯", "next": "fantasy_desert" },
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle" }
+      ]
+    },
+    {
+      "id": "fantasy_human_kingdom",
+      "content": "你来到了人类王国，这里繁华而热闹。国王听说你是被选中的英雄，决定派遣皇家骑士团协助你。",
+      "choices": [
+        { "text": "接受骑士团的协助", "next": "fantasy_accept_knights" },
+        { "text": "独自前往黑暗之王的巢穴", "next": "fantasy_final_battle" },
+        { "text": "继续寻找其他盟友", "next": "fantasy_elf_forest" }
+      ]
+    },
+    {
+      "id": "fantasy_elf_forest",
+      "content": "你来到了精灵森林，这里美丽而神秘。精灵女王听说你是被选中的英雄，决定派遣精灵游侠团协助你。",
+      "choices": [
+        { "text": "接受游侠团的协助", "next": "fantasy_accept_rangers" },
+        { "text": "独自前往黑暗之王的巢穴", "next": "fantasy_final_battle" },
+        { "text": "继续寻找其他盟友", "next": "fantasy_dwarf_mine" }
+      ]
+    },
+    {
+      "id": "fantasy_dwarf_mine",
+      "content": "你来到了矮人矿坑，这里充满了金属的叮当声。矮人国王听说你是被选中的英雄，决定派遣矮人战士团协助你。",
+      "choices": [
+        { "text": "接受战士团的协助", "next": "fantasy_accept_warriors" },
+        { "text": "独自前往黑暗之王的巢穴", "next": "fantasy_final_battle" },
+        { "text": "继续寻找其他盟友", "next": "fantasy_human_kingdom" }
+      ]
+    },
+    {
+      "id": "fantasy_accept_knights",
+      "content": "你接受了皇家骑士团的协助，骑士团团长是一位经验丰富的老骑士。他带领着100名精锐骑士，准备与你并肩作战。",
+      "choices": [
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle_with_knights" }
+      ]
+    },
+    {
+      "id": "fantasy_accept_rangers",
+      "content": "你接受了精灵游侠团的协助，游侠团团长是一位神射手。她带领着100名精灵游侠，准备与你并肩作战。",
+      "choices": [
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle_with_rangers" }
+      ]
+    },
+    {
+      "id": "fantasy_accept_warriors",
+      "content": "你接受了矮人战士团的协助，战士团团长是一位强壮的战士。他带领着100名矮人战士，准备与你并肩作战。",
+      "choices": [
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle_with_warriors" }
+      ]
+    },
+    {
+      "id": "fantasy_final_battle",
+      "content": "在黑暗之王的巢穴前，你遇到了最终的挑战。黑暗之王现身，他的力量远超你的想象。但手握圣剑的你，已经无所畏惧。",
+      "choices": [
+        { "text": "与黑暗之王决一死战", "next": "fantasy_victory" },
+        { "text": "寻找黑暗之王的弱点", "next": "fantasy_weakness" },
+        { "text": "使用魔法攻击", "next": "fantasy_magic_attack" }
+      ]
+    },
+    {
+      "id": "fantasy_final_battle_with_knights",
+      "content": "在黑暗之王的巢穴前，你遇到了最终的挑战。黑暗之王现身，他的力量远超你的想象。但你并不孤单，皇家骑士团与你并肩作战。",
+      "choices": [
+        { "text": "与黑暗之王决一死战", "next": "fantasy_victory_with_knights" },
+        { "text": "寻找黑暗之王的弱点", "next": "fantasy_weakness_with_knights" },
+        { "text": "让骑士团先攻击", "next": "fantasy_knights_attack" }
+      ]
+    },
+    {
+      "id": "fantasy_final_battle_with_rangers",
+      "content": "在黑暗之王的巢穴前，你遇到了最终的挑战。黑暗之王现身，他的力量远超你的想象。但你并不孤单，精灵游侠团与你并肩作战。",
+      "choices": [
+        { "text": "与黑暗之王决一死战", "next": "fantasy_victory_with_rangers" },
+        { "text": "寻找黑暗之王的弱点", "next": "fantasy_weakness_with_rangers" },
+        { "text": "让游侠团先攻击", "next": "fantasy_rangers_attack" }
+      ]
+    },
+    {
+      "id": "fantasy_final_battle_with_warriors",
+      "content": "在黑暗之王的巢穴前，你遇到了最终的挑战。黑暗之王现身，他的力量远超你的想象。但你并不孤单，矮人战士团与你并肩作战。",
+      "choices": [
+        { "text": "与黑暗之王决一死战", "next": "fantasy_victory_with_warriors" },
+        { "text": "寻找黑暗之王的弱点", "next": "fantasy_weakness_with_warriors" },
+        { "text": "让战士团先攻击", "next": "fantasy_warriors_attack" }
+      ]
+    },
+    {
+      "id": "fantasy_victory",
+      "content": "经过激烈的战斗，你终于击败了黑暗之王。光明重新降临世界，你成为了传说中的英雄。魔法书完成了它的使命，化作光芒消散在空气中。",
+      "choices": []
+    },
+    {
+      "id": "fantasy_victory_with_knights",
+      "content": "经过激烈的战斗，你和皇家骑士团终于击败了黑暗之王。光明重新降临世界，你成为了传说中的英雄。骑士团团长向你致敬，魔法书完成了它的使命，化作光芒消散在空气中。",
+      "choices": []
+    },
+    {
+      "id": "fantasy_victory_with_rangers",
+      "content": "经过激烈的战斗，你和精灵游侠团终于击败了黑暗之王。光明重新降临世界，你成为了传说中的英雄。游侠团团长向你致敬，魔法书完成了它的使命，化作光芒消散在空气中。",
+      "choices": []
+    },
+    {
+      "id": "fantasy_victory_with_warriors",
+      "content": "经过激烈的战斗，你和矮人战士团终于击败了黑暗之王。光明重新降临世界，你成为了传说中的英雄。战士团团长向你致敬，魔法书完成了它的使命，化作光芒消散在空气中。",
+      "choices": []
+    },
+    {
+      "id": "fantasy_weakness",
+      "content": "你仔细观察黑暗之王，发现他的胸口有一个黑色的宝石，那是他的力量源泉。只要摧毁宝石，就能击败黑暗之王。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem" },
+        { "text": "寻找攻击宝石的机会", "next": "fantasy_find_opportunity" }
+      ]
+    },
+    {
+      "id": "fantasy_weakness_with_knights",
+      "content": "你仔细观察黑暗之王，发现他的胸口有一个黑色的宝石，那是他的力量源泉。只要摧毁宝石，就能击败黑暗之王。你告诉骑士团团长这个发现。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem_with_knights" },
+        { "text": "让骑士团分散注意力", "next": "fantasy_distract_with_knights" }
+      ]
+    },
+    {
+      "id": "fantasy_weakness_with_rangers",
+      "content": "你仔细观察黑暗之王，发现他的胸口有一个黑色的宝石，那是他的力量源泉。只要摧毁宝石，就能击败黑暗之王。你告诉游侠团团长这个发现。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem_with_rangers" },
+        { "text": "让游侠团分散注意力", "next": "fantasy_distract_with_rangers" }
+      ]
+    },
+    {
+      "id": "fantasy_weakness_with_warriors",
+      "content": "你仔细观察黑暗之王，发现他的胸口有一个黑色的宝石，那是他的力量源泉。只要摧毁宝石，就能击败黑暗之王。你告诉战士团团长这个发现。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem_with_warriors" },
+        { "text": "让战士团分散注意力", "next": "fantasy_distract_with_warriors" }
+      ]
+    },
+    {
+      "id": "fantasy_attack_gem",
+      "content": "你集中所有力量，用圣剑攻击黑暗宝石。宝石开始碎裂，黑暗之王发出痛苦的咆哮。经过一番努力，宝石终于破碎，黑暗之王的力量开始消散。",
+      "choices": [
+        { "text": "给予黑暗之王最后一击", "next": "fantasy_victory" }
+      ]
+    },
+    {
+      "id": "fantasy_find_opportunity",
+      "content": "你等待攻击宝石的机会，最终在黑暗之王使用禁咒时发现了破绽。你趁机用圣剑攻击黑暗宝石，宝石开始碎裂。",
+      "choices": [
+        { "text": "继续攻击宝石", "next": "fantasy_attack_gem" }
+      ]
+    },
+    {
+      "id": "fantasy_attack_gem_with_knights",
+      "content": "你集中所有力量，用圣剑攻击黑暗宝石。骑士团团长也命令骑士们同时攻击。宝石开始碎裂，黑暗之王发出痛苦的咆哮。",
+      "choices": [
+        { "text": "继续攻击宝石", "next": "fantasy_victory_with_knights" }
+      ]
+    },
+    {
+      "id": "fantasy_distract_with_knights",
+      "content": "你命令骑士团分散黑暗之王的注意力，自己趁机攻击黑暗宝石。骑士们勇敢地冲向黑暗之王，为你创造了攻击的机会。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem_with_knights" }
+      ]
+    },
+    {
+      "id": "fantasy_attack_gem_with_rangers",
+      "content": "你集中所有力量，用圣剑攻击黑暗宝石。游侠团团长也命令游侠们同时攻击。宝石开始碎裂，黑暗之王发出痛苦的咆哮。",
+      "choices": [
+        { "text": "继续攻击宝石", "next": "fantasy_victory_with_rangers" }
+      ]
+    },
+    {
+      "id": "fantasy_distract_with_rangers",
+      "content": "你命令游侠团分散黑暗之王的注意力，自己趁机攻击黑暗宝石。游侠们用箭雨攻击黑暗之王，为你创造了攻击的机会。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem_with_rangers" }
+      ]
+    },
+    {
+      "id": "fantasy_attack_gem_with_warriors",
+      "content": "你集中所有力量，用圣剑攻击黑暗宝石。战士团团长也命令战士们同时攻击。宝石开始碎裂，黑暗之王发出痛苦的咆哮。",
+      "choices": [
+        { "text": "继续攻击宝石", "next": "fantasy_victory_with_warriors" }
+      ]
+    },
+    {
+      "id": "fantasy_distract_with_warriors",
+      "content": "你命令战士团分散黑暗之王的注意力，自己趁机攻击黑暗宝石。战士们勇敢地冲向黑暗之王，为你创造了攻击的机会。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem_with_warriors" }
+      ]
+    },
+    {
+      "id": "fantasy_magic_attack",
+      "content": "你决定使用魔法攻击黑暗之王。你集中所有魔力，施展了最强大的禁咒。禁咒的威力惊人，但黑暗之王的力量也很强大。",
+      "choices": [
+        { "text": "继续使用魔法攻击", "next": "fantasy_continue_magic" },
+        { "text": "用圣剑攻击", "next": "fantasy_attack_gem" }
+      ]
+    },
+    {
+      "id": "fantasy_continue_magic",
+      "content": "你继续使用魔法攻击，黑暗之王开始感到压力。但他的力量依然强大，你需要更多的帮助。",
+      "choices": [
+        { "text": "寻找盟友", "next": "fantasy_allies" },
+        { "text": "用圣剑攻击", "next": "fantasy_attack_gem" }
+      ]
+    },
+    {
+      "id": "fantasy_knights_attack",
+      "content": "骑士团冲向黑暗之王，勇敢地与他战斗。虽然骑士们英勇无畏，但黑暗之王的力量太强大了。你需要寻找机会攻击黑暗宝石。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem_with_knights" }
+      ]
+    },
+    {
+      "id": "fantasy_rangers_attack",
+      "content": "游侠团用箭雨攻击黑暗之王，箭矢如雨点般落下。虽然箭矢造成了伤害，但黑暗之王的力量太强大了。你需要寻找机会攻击黑暗宝石。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem_with_rangers" }
+      ]
+    },
+    {
+      "id": "fantasy_warriors_attack",
+      "content": "战士团冲向黑暗之王，用他们的武器猛烈攻击。虽然战士们强壮有力，但黑暗之王的力量太强大了。你需要寻找机会攻击黑暗宝石。",
+      "choices": [
+        { "text": "攻击黑暗宝石", "next": "fantasy_attack_gem_with_warriors" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_final_battle",
+      "content": "你来到了黑暗之王的巢穴，但这次你选择了黑暗的道路。黑暗之王看到你手中的黑暗剑，露出了诡异的笑容：'你选择了黑暗，很好。'",
+      "choices": [
+        { "text": "与黑暗之王联手", "next": "fantasy_join_darkness" },
+        { "text": "背叛黑暗之王", "next": "fantasy_betray_darkness" }
+      ]
+    },
+    {
+      "id": "fantasy_join_darkness",
+      "content": "你决定与黑暗之王联手，共同统治这个世界。黑暗之王接受了你的提议，你们成为了新的黑暗统治者。世界陷入了永恒的黑暗。",
+      "choices": []
+    },
+    {
+      "id": "fantasy_betray_darkness",
+      "content": "你决定背叛黑暗之王，用黑暗剑攻击他。黑暗之王没有预料到你的背叛，被你击败。但你也被黑暗力量侵蚀，成为了新的黑暗之王。",
+      "choices": []
+    },
+    {
+      "id": "fantasy_seek_more_darkness",
+      "content": "你继续寻找更多的黑暗力量。在寻找过程中，你遇到了各种黑暗生物和邪恶的存在。你的心灵越来越黑暗，最终完全被黑暗吞噬。",
+      "choices": []
+    },
+    {
+      "id": "fantasy_snow_mountain",
+      "content": "你来到了雪山之巅，这里寒冷刺骨，狂风呼啸。在山顶，你看到了一座巨大的冰霜神殿，神殿前站着一个巨大的冰霜巨人。",
+      "choices": [
+        { "text": "与冰霜巨人战斗", "next": "fantasy_fight_giant" },
+        { "text": "尝试与冰霜巨人对话", "next": "fantasy_talk_giant" },
+        { "text": "寻找其他进入神殿的方法", "next": "fantasy_find_temple_entrance" }
+      ]
+    },
+    {
+      "id": "fantasy_fight_giant",
+      "content": "你与冰霜巨人展开了激烈的战斗。冰霜巨人的力量非常强大，但你知道他的弱点。经过一番努力，你终于击败了冰霜巨人。",
+      "choices": [
+        { "text": "进入冰霜神殿", "next": "fantasy_enter_ice_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_talk_giant",
+      "content": "你尝试与冰霜巨人对话。冰霜巨人说道：'只有通过我的考验，才能进入神殿。你愿意接受考验吗？'",
+      "choices": [
+        { "text": "接受考验", "next": "fantasy_giant_trial" },
+        { "text": "拒绝考验，直接战斗", "next": "fantasy_fight_giant" }
+      ]
+    },
+    {
+      "id": "fantasy_giant_trial",
+      "content": "冰霜巨人的考验是：在冰天雪地中生存三天三夜。你接受了考验，凭借你的意志力和魔法，成功通过了考验。",
+      "choices": [
+        { "text": "进入冰霜神殿", "next": "fantasy_enter_ice_temple" }
+      ]
+    },
+    {
+      "id": "fantasy_find_temple_entrance",
+      "content": "你寻找其他进入神殿的方法，最终在神殿侧面发现了一个隐蔽的入口。入口被冰雪覆盖，但你可以用火系魔法融化冰雪。",
+      "choices": [
+        { "text": "用火系魔法融化冰雪", "next": "fantasy_melt_ice" },
+        { "text": "放弃，回到正面", "next": "fantasy_snow_mountain" }
+      ]
+    },
+    {
+      "id": "fantasy_melt_ice",
+      "content": "你用火系魔法融化了冰雪，成功进入了神殿。神殿内部充满了冰霜气息，在祭坛中央，你看到了圣盾。",
+      "choices": [
+        { "text": "拿起圣盾", "next": "fantasy_take_shield" }
+      ]
+    },
+    {
+      "id": "fantasy_enter_ice_temple",
+      "content": "你进入了冰霜神殿，神殿内部充满了冰霜气息。在祭坛中央，你看到了圣盾，它散发着温暖的光芒。",
+      "choices": [
+        { "text": "拿起圣盾", "next": "fantasy_take_shield" }
+      ]
+    },
+    {
+      "id": "fantasy_take_shield",
+      "content": "你拿起圣盾，感受到强大的防御力量在体内流动。圣盾能够抵挡任何攻击，是你对抗黑暗之王的重要武器。",
+      "choices": [
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle" },
+        { "text": "寻找圣杯", "next": "fantasy_desert" },
+        { "text": "返回图书馆", "next": "fantasy_library" }
+      ]
+    },
+    {
+      "id": "fantasy_desert",
+      "content": "你来到了沙漠深处，这里炎热干燥，沙尘漫天。在沙漠中心，你发现了一座古老的遗迹，遗迹被各种机关和陷阱保护着。",
+      "choices": [
+        { "text": "尝试破解机关", "next": "fantasy_solve_traps" },
+        { "text": "寻找遗迹的入口", "next": "fantasy_find_ruins_entrance" },
+        { "text": "询问魔法书关于遗迹的信息", "next": "fantasy_ruins_info" }
+      ]
+    },
+    {
+      "id": "fantasy_solve_traps",
+      "content": "你开始破解遗迹的机关和陷阱。机关非常复杂，需要智慧和耐心。经过多次尝试，你终于破解了所有机关。",
+      "choices": [
+        { "text": "进入遗迹", "next": "fantasy_enter_ruins" }
+      ]
+    },
+    {
+      "id": "fantasy_find_ruins_entrance",
+      "content": "你寻找遗迹的入口，最终在遗迹的背面发现了一个隐蔽的入口。入口被沙尘覆盖，但你可以用风系魔法吹散沙尘。",
+      "choices": [
+        { "text": "用风系魔法吹散沙尘", "next": "fantasy_blow_sand" },
+        { "text": "放弃，回到正面", "next": "fantasy_desert" }
+      ]
+    },
+    {
+      "id": "fantasy_blow_sand",
+      "content": "你用风系魔法吹散了沙尘，成功进入了遗迹。遗迹内部充满了古老的气息，在祭坛中央，你看到了圣杯。",
+      "choices": [
+        { "text": "拿起圣杯", "next": "fantasy_take_cup" }
+      ]
+    },
+    {
+      "id": "fantasy_ruins_info",
+      "content": "魔法书说道：'这座遗迹是古代文明留下的，里面藏着圣杯。圣杯拥有神奇的力量，能够治愈一切伤痛。'",
+      "choices": [
+        { "text": "尝试破解机关", "next": "fantasy_solve_traps" }
+      ]
+    },
+    {
+      "id": "fantasy_enter_ruins",
+      "content": "你进入了遗迹，遗迹内部充满了古老的气息。在祭坛中央，你看到了圣杯，它散发着神圣的光芒。",
+      "choices": [
+        { "text": "拿起圣杯", "next": "fantasy_take_cup" }
+      ]
+    },
+    {
+      "id": "fantasy_take_cup",
+      "content": "你拿起圣杯，感受到强大的治愈力量在体内流动。圣杯能够治愈一切伤痛，是你对抗黑暗之王的重要武器。",
+      "choices": [
+        { "text": "前往黑暗之王的巢穴", "next": "fantasy_final_battle" },
+        { "text": "寻找圣盾", "next": "fantasy_snow_mountain" },
+        { "text": "返回图书馆", "next": "fantasy_library" }
+      ]
+    },
+    {
+      "id": "fantasy_ruins_traps",
+      "content": "魔法书说道：'遗迹中的机关非常复杂，需要智慧和耐心才能破解。机关包括谜题、陷阱、魔法阵等。'",
+      "choices": [
+        { "text": "尝试破解机关", "next": "fantasy_solve_traps" }
+      ]
+    },
+    {
+      "id": "fantasy_dark_king_lair",
+      "content": "你来到了黑暗之王的巢穴，这里充满了黑暗气息。黑暗之王已经苏醒，他的力量正在不断增强。",
+      "choices": [
+        { "text": "直接挑战黑暗之王", "next": "fantasy_final_battle" },
+        { "text": "先寻找圣剑", "next": "fantasy_forest" }
+      ]
+    },
+    {
+      "id": "fantasy_ancient_ruins",
+      "content": "你来到了古代遗迹，这里充满了古老的气息。遗迹中隐藏着许多秘密和宝藏，但也充满了危险。",
+      "choices": [
+        { "text": "探索遗迹", "next": "fantasy_explore_ruins" },
+        { "text": "返回图书馆", "next": "fantasy_library" }
+      ]
+    },
+    {
+      "id": "fantasy_explore_ruins",
+      "content": "你探索了古代遗迹，发现了许多珍贵的物品：古老的卷轴、魔法宝石、失传的技艺等。这些物品将帮助你完成使命。",
+      "choices": [
+        { "text": "收集物品", "next": "fantasy_collect_items" },
+        { "text": "返回图书馆", "next": "fantasy_library" }
+      ]
+    },
+    {
+      "id": "fantasy_collect_items",
+      "content": "你收集了遗迹中的珍贵物品：古老的卷轴x3、魔法宝石x5、失传的技艺手稿x2。这些物品将在冒险中发挥重要作用。",
+      "choices": [
+        { "text": "返回图书馆", "next": "fantasy_library" },
+        { "text": "继续探索遗迹", "next": "fantasy_explore_ruins" }
+      ]
+    },
+    {
+      "id": "fantasy_help_others",
+      "content": "你决定寻找需要帮助的人。在旅途中，你遇到了许多需要帮助的人：受伤的旅行者、被魔兽袭击的村庄、生病的老人等。",
+      "choices": [
+        { "text": "帮助受伤的旅行者", "next": "fantasy_help_traveler" },
+        { "text": "帮助被魔兽袭击的村庄", "next": "fantasy_help_village" },
+        { "text": "帮助生病的老人", "next": "fantasy_help_elder" }
+      ]
+    },
+    {
+      "id": "fantasy_help_traveler",
+      "content": "你用治愈术治愈了受伤的旅行者。旅行者感激地向你道谢，并告诉你一个秘密：在迷雾森林深处，隐藏着一个古老的宝藏。",
+      "choices": [
+        { "text": "寻找宝藏", "next": "fantasy_find_treasure" },
+        { "text": "继续帮助其他人", "next": "fantasy_help_others" }
+      ]
+    },
+    {
+      "id": "fantasy_help_village",
+      "content": "你帮助被魔兽袭击的村庄，击败了袭击村庄的魔兽。村民们感激地向你道谢，并赠送你一件珍贵的礼物：一把魔法剑。",
+      "choices": [
+        { "text": "接受礼物", "next": "fantasy_accept_gift" },
+        { "text": "拒绝礼物，继续帮助其他人", "next": "fantasy_help_others" }
+      ]
+    },
+    {
+      "id": "fantasy_help_elder",
+      "content": "你用治愈术治愈了生病的老人。老人感激地向你道谢，并告诉你一个秘密：他是古代英雄的后代，知道圣剑的下落。",
+      "choices": [
+        { "text": "询问圣剑的下落", "next": "fantasy_sword_location" },
+        { "text": "继续帮助其他人", "next": "fantasy_help_others" }
+      ]
+    },
+    {
+      "id": "fantasy_find_treasure",
+      "content": "你找到了旅行者所说的宝藏，里面有许多珍贵的物品：金币、宝石、魔法道具等。这些物品将帮助你完成使命。",
+      "choices": [
+        { "text": "返回图书馆", "next": "fantasy_library" },
+        { "text": "继续帮助其他人", "next": "fantasy_help_others" }
+      ]
+    },
+    {
+      "id": "fantasy_accept_gift",
+      "content": "你接受了村民赠送的魔法剑。这把剑虽然不如圣剑强大，但也是一件珍贵的武器。",
+      "choices": [
+        { "text": "返回图书馆", "next": "fantasy_library" },
+        { "text": "继续帮助其他人", "next": "fantasy_help_others" }
+      ]
+    },
+    {
+      "id": "fantasy_combat_training",
+      "content": "你决定进行实战训练，提升自己的战斗能力。在训练过程中，你遇到了各种对手：魔兽、强盗、其他冒险者等。",
+      "choices": [
+        { "text": "与魔兽战斗", "next": "fantasy_fight_monster" },
+        { "text": "与强盗战斗", "next": "fantasy_fight_bandit" },
+        { "text": "与其他冒险者切磋", "next": "fantasy_fight_adventurer" }
+      ]
+    },
+    {
+      "id": "fantasy_fight_monster",
+      "content": "你与一只魔兽展开了战斗。魔兽虽然强大，但你的魔法和技巧让你占据了优势。经过一番努力，你击败了魔兽。",
+      "choices": [
+        { "text": "继续战斗训练", "next": "fantasy_combat_training" },
+        { "text": "返回图书馆", "next": "fantasy_library" }
+      ]
+    },
+    {
+      "id": "fantasy_fight_bandit",
+      "content": "你与一群强盗展开了战斗。强盗虽然人数众多，但你的魔法和技巧让你占据了优势。经过一番努力，你击败了强盗。",
+      "choices": [
+        { "text": "继续战斗训练", "next": "fantasy_combat_training" },
+        { "text": "返回图书馆", "next": "fantasy_library" }
+      ]
+    },
+    {
+      "id": "fantasy_fight_adventurer",
+      "content": "你与其他冒险者展开了切磋。虽然只是切磋，但你也学到了很多战斗技巧。你的战斗能力得到了提升。",
+      "choices": [
+        { "text": "继续战斗训练", "next": "fantasy_combat_training" },
+        { "text": "返回图书馆", "next": "fantasy_library" }
+      ]
+    },
+    {
+      "id": "fantasy_darkness_history",
+      "content": "书中记载着黑暗势力的历史：黑暗之王曾经统治过这个世界，后来被古代英雄封印。现在，封印正在松动，黑暗之王即将苏醒。",
+      "choices": [
+        { "text": "了解黑暗之王的能力", "next": "fantasy_dark_king_power" },
+        { "text": "返回与魔法书对话", "next": "fantasy_origin" }
+      ]
+    }
+  ]
+}
