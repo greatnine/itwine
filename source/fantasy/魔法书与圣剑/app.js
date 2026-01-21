@@ -167,6 +167,9 @@ class FantasyStory {
         this.renderChoices(node.choices || []);
         this.updateNavigationButtons();
         
+        // 滚动到页面顶部，确保内容可见
+        window.scrollTo(0, 0);
+        
         console.log(`📖 显示节点: ${node.id}`);
     }
 
