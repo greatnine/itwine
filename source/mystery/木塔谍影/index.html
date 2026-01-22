@@ -187,7 +187,44 @@ body {
   color: #0d6efd !important;/* 文字/图标色 */
   background: var(--bg) !important; 
   /*border: 1px solid var(--ui-bar-border) !important;  边框 */
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">//;</script><tw-passagedata pid="1" name="About" tags="" position="100,1200" size="100,100">&lt;&lt;script&gt;&gt; UIBar.stow();&lt;&lt;/script&gt;&gt;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">l10nStrings.textIdentity = '互动故事';
+l10nStrings.textOk = '确定';
+l10nStrings.textCancel = '取消';
+
+l10nStrings.textSave = '保存';
+l10nStrings.textClear = '清空';
+l10nStrings.textTurn = '回合';
+l10nStrings.textExport = '导出';
+l10nStrings.textImport = '导入';
+l10nStrings.textLoad = '加载';
+
+//重新开始
+l10nStrings.restartTitle = '重新开始'; // 内置菜单"RESTART"
+l10nStrings.restartMesgPrompt = '所有未保存的进度都将丢失。确定要重新开始吗？';
+
+
+
+//存档
+/****************************************************************
+	Dialog: Saves.	*****************************************************************/
+l10nStrings.continueTitle = '继续';
+l10nStrings.savesTitle = '保存进度';
+l10nStrings.savesHeaderBrowser = '浏览器内';
+l10nStrings.savesHeaderDisk = '本地';
+l10nStrings.savesLabelBrowserClear = '清空浏览器存档';
+l10nStrings.savesLabelBrowserExport = '导出浏览器存档为bundle';
+l10nStrings.savesLabelBrowserImport = '从bundle导入浏览器存档';
+l10nStrings.savesLabelDiskLoad = '从本地加载';
+l10nStrings.savesLabelDiskSave = '保存至本地';
+l10nStrings.savesTextBrowserAuto = '自动保存';
+l10nStrings.savesTextBrowserSlot = '存位';
+l10nStrings.savesTextNoDate = '未知时间';
+
+
+//UI栏
+l10nStrings.uiBarLabelToggle = '展开/收起UI栏';
+l10nStrings.uiBarLabelBackward = '在{textIdentity}历史记录中后退';
+l10nStrings.uiBarLabelForward = '在{textIdentity}历史记录中前进';</script><tw-passagedata pid="1" name="About" tags="" position="100,1200" size="100,100">&lt;&lt;script&gt;&gt; UIBar.stow();&lt;&lt;/script&gt;&gt;
 
 &lt;div style=&quot;font-size: 0.95em;&quot;&gt;
     &lt;h2 style=&quot;text-align: center; &quot;&gt;关于互动小说《木塔谍影》&lt;/h2&gt; 
@@ -288,20 +325,10 @@ body {
 
 &lt;&lt;nobr&gt;&gt;
 &lt;div id=&quot;menu&quot;&gt;&lt;ul&gt;&lt;li&gt;
-    &lt;&lt;link &quot;🌙☀️&quot;&gt;&gt;    
-        &lt;&lt;set $darkMode = document.documentElement.classList.contains(&#39;dark-mode&#39;)&gt;&gt;        
-        &lt;&lt;run $darkMode = !$darkMode&gt;&gt;
-        &lt;&lt;if $darkMode&gt;&gt;
-            &lt;&lt;run document.documentElement.classList.add(&#39;dark-mode&#39;)&gt;&gt;
-        &lt;&lt;else&gt;&gt;
-            &lt;&lt;run document.documentElement.classList.remove(&#39;dark-mode&#39;)&gt;&gt;
-        &lt;&lt;/if&gt;&gt;
-        &lt;&lt;run UIBar.stow();&gt;&gt;
+    &lt;&lt;link &quot;🌙☀️&quot;&gt;&gt;
+    &lt;&lt;run document.documentElement.classList.toggle(&#39;dark-mode&#39;); UIBar.stow()&gt;&gt;
     &lt;&lt;/link&gt;&gt;
-&lt;/li&gt;
-
-
-&lt;/ul&gt;&lt;/div&gt;
+&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="6" name="StoryDisplayTitle" tags="" position="0,600" size="100,100">木塔谍影</tw-passagedata><tw-passagedata pid="7" name="StoryInit" tags="" position="200,1000" size="100,100">&lt;&lt;script&gt;&gt;
