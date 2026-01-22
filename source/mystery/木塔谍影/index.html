@@ -167,6 +167,7 @@ body {
 #ui-bar {                      /*侧边菜单*/
   background: var(--bg) !important;  
   border-right: 1px solid var(--ui-bar-border) !important; /*边框*/
+  top: 10px; 
 }
 
 #menu a {                       /*自定义 #menu 样式（适配主题变量）*/
@@ -183,7 +184,7 @@ body {
 
 #ui-bar-toggle::before {
   content: "☰" !important;  /*自定义图标，默认侧边栏符 */
-  color: var(--text) !important;/* 文字/图标色 */
+  color: #0d6efd !important;/* 文字/图标色 */
   background: var(--bg) !important; 
   /*border: 1px solid var(--ui-bar-border) !important;  边框 */
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">//;</script><tw-passagedata pid="1" name="About" tags="" position="100,1200" size="100,100">&lt;&lt;script&gt;&gt; UIBar.stow();&lt;&lt;/script&gt;&gt;
@@ -281,14 +282,14 @@ body {
     [[$choice1-&gt;信号调查]]    
 	[[$choice2-&gt;旧案重温]]    
     [[$choice3-&gt;技术分析]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryAuthor" tags="" position="0,800" size="100,100">戚久柱编著&lt;br&gt;qijiuzhu@tsinghua.org.cn</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="0,900" size="100,100">&lt;&lt;link &quot;【故事人物】&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryAuthor" tags="" position="0,800" size="100,100">戚久柱编著&lt;br&gt;qijiuzhu@tsinghua.org.cn</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="0,900" size="100,100">&lt;&lt;link &quot;&lt;strong&gt;【故事人物】&lt;/strong&gt;&quot;&gt;&gt;
     &lt;&lt;popup &#39;&#39;  &#39;CharacterList&#39;&gt;&gt;&lt;&lt;/popup&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
 &lt;&lt;nobr&gt;&gt;
 &lt;div id=&quot;menu&quot;&gt;&lt;ul&gt;&lt;li&gt;
-    &lt;&lt;set $darkMode = false&gt;&gt;
-    &lt;&lt;link &quot;🌙☀️&quot;&gt;&gt;
+    &lt;&lt;link &quot;🌙☀️&quot;&gt;&gt;    
+        &lt;&lt;set $darkMode = document.documentElement.classList.contains(&#39;dark-mode&#39;)&gt;&gt;        
         &lt;&lt;run $darkMode = !$darkMode&gt;&gt;
         &lt;&lt;if $darkMode&gt;&gt;
             &lt;&lt;run document.documentElement.classList.add(&#39;dark-mode&#39;)&gt;&gt;
