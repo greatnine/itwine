@@ -183,14 +183,27 @@ body {
 }
 
 #ui-bar-toggle::before {
-  content: "☰" !important;  /*自定义图标，默认侧边栏符 */
-  color: var(--text) !important;/* 文字/图标色 */
-  background: var(--bg) !important; 
-  /*border: 1px solid var(--ui-bar-border) !important;  边框 */
+  //content: "☰" !important;  /*自定义图标，默认侧边栏符 */
+  color: gray;/*var(--text) !important;*//* 文字/图标色 */
+  /*background: var(--bg) !important; */
+  
+  border: 1px solid var(--ui-bar-border) !important;  /*边框 */
 }
+#ui-bar-toggle {
+  border: 1px solid var(--ui-bar-border) !important;  /*边框 */
+  background: color-mix(in srgb, var(--bg) 95%, var(--text))!important;
+}
+
+
+/* 上下页<> 针对 UIBar 中所有按钮 */
+#ui-bar button {
+  color: green;
+  border: 1px solid var(--ui-bar-border) !important; 
+  //background: #3498db;
+}
+
+
 /*------------------------------*/
-
-
 
 /*------------------------------*/
 
@@ -231,7 +244,9 @@ l10nStrings.savesTextNoDate = '未知时间';
 //UI栏
 l10nStrings.uiBarLabelToggle = '展开/收起UI栏';
 l10nStrings.uiBarLabelBackward = '在{textIdentity}历史记录中后退';
-l10nStrings.uiBarLabelForward = '在{textIdentity}历史记录中前进';</script><tw-passagedata pid="1" name="About" tags="" position="100,1200" size="100,100">&lt;&lt;script&gt;&gt; UIBar.stow();&lt;&lt;/script&gt;&gt;
+l10nStrings.uiBarLabelForward = '在{textIdentity}历史记录中前进';
+
+</script><tw-passagedata pid="1" name="About" tags="" position="100,1200" size="100,100">&lt;&lt;script&gt;&gt; UIBar.stow();&lt;&lt;/script&gt;&gt;
 
 &lt;div style=&quot;font-size: 0.95em;&quot;&gt;
     &lt;h2 style=&quot;text-align: center; &quot;&gt;关于互动小说《木塔谍影》&lt;/h2&gt; 
@@ -341,6 +356,10 @@ l10nStrings.uiBarLabelForward = '在{textIdentity}历史记录中前进';</scrip
 </tw-passagedata><tw-passagedata pid="6" name="StoryDisplayTitle" tags="" position="0,600" size="100,100">木塔谍影</tw-passagedata><tw-passagedata pid="7" name="StoryInit" tags="" position="200,1000" size="100,100">&lt;&lt;script&gt;&gt;
     //UIBar.hide();  //隐藏 UI 栏（内置菜单所在位置）
      UIBar.stow();
+     /* 点击页面任意处隐藏内置菜单 */
+    $(document).on(&#39;click&#39;, function (ev) {
+        if (!$(ev.target).closest(&#39;#ui-bar&#39;).length) UIBar.stow();
+    });
 &lt;&lt;/script&gt;&gt;
 
 &lt;!--&lt;&lt;link &quot;返回&quot;&gt;&gt;&lt;&lt;backToPassage&gt;&gt;&lt;&lt;/link&gt;&gt;--&gt;

@@ -1738,7 +1738,9 @@ There are resources and help available with Twine and SugarCube:
 &lt;hr&gt;\
 &lt;h5&gt;You can find my other SugarCube templates [[here|https://manonamora.itch.io/twine-sugarcube-templates]].&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="7" name="menu" tags="SOME" position="100,200" size="100,100">&lt;div id=&quot;title&quot;&gt;&lt;&lt;include &quot;StoryDisplayTitle&quot;&gt;&gt;&lt;/div&gt;/* If you don&#39;t want the extra passage, just swap the &lt;&lt;include&gt;&gt; for the title */
 &lt;&lt;include &quot;navigation&quot;&gt;&gt;/* Remove this if you don&#39;t want players to undo/redo actions */
-&lt;&lt;include &quot;sidemenu&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="navigation" tags="SOME" position="100,350" size="100,100">&lt;div&gt;&amp;emsp;&lt;&lt;link &#39;←⮘&#39;&gt;&gt;&lt;&lt;run Engine.backward()&gt;&gt;&lt;&lt;/link&gt;&gt;&amp;emsp;|&amp;emsp;&lt;&lt;if State.length === State.size&gt;&gt;⮚→&lt;&lt;else&gt;&gt;&lt;&lt;link &#39;⮚→&#39;&gt;&gt;&lt;&lt;run Engine.forward()&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt;&amp;emsp;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="sidemenu" tags="SOME nobr" position="200,350" size="100,100">&lt;div id=&quot;dropmenu&quot;&gt;
+&lt;&lt;include &quot;sidemenu&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="navigation" tags="SOME" position="100,350" size="100,100">&lt;div&gt;&amp;emsp;&lt;&lt;link &#39;←◀⮘&#39;&gt;&gt;&lt;&lt;run Engine.backward()&gt;&gt;&lt;&lt;/link&gt;&gt;&amp;emsp;|&amp;emsp;&lt;&lt;if State.length === State.size&gt;&gt;⮚▶→&lt;&lt;else&gt;&gt;&lt;&lt;link &#39;⮚▶→&#39;&gt;&gt;&lt;&lt;run Engine.forward()&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt;&amp;emsp;&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="9" name="sidemenu" tags="SOME nobr" position="200,350" size="100,100">&lt;div id=&quot;dropmenu&quot;&gt;
 	&lt;a onclick=&quot;myFunction()&quot; class=&quot;dropbtn&quot;&gt;MENU 🏚&lt;/a&gt;
 	&lt;div id=&quot;myMenu&quot; class=&quot;dropup-content&quot;&gt;
 		&lt;&lt;link &#39;STATISTICS 统计数据&#39;&gt;&gt;
