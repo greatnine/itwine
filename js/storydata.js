@@ -138,6 +138,19 @@ const storiesCollection = {
                 externalLink: "./source/mystery/午夜钟声/index.html",
                 isRecommended: false,
                 recommendReason: ""
+            },
+
+            {
+                id: "mystery_005",
+                title: "花园山敌特奇案",
+                author: "传习者戚",
+                cover: "images/03.png",
+                description: "上世纪六十年代一个初秋，吉林省榆树县东南花园山脚下的光明公社祥顺大队，有人在山坡上发现了一个印有洋文的罐头盒。地方当权者为捞资本左倾冒进，兴师动众抓敌特，从而引发出荒诞离奇的冤案。",
+                tags: "危机反转，离奇荒诞",
+                status: "可试读......网页改进升级中",
+                externalLink: "./source/mystery/花园山奇案/index.html",
+                isRecommended: true,
+                recommendReason: "当年发生在花园山的敌特冤案真相，随着岁月的流逝已经很难复原了。借助于当年知情者的回忆，大致演绎出了一个多版本虚拟故事。每次打开都是版本不同的讲述，试图还原特定年代混乱时期的错误乱象，使人铭记历史教训，珍惜当下法治公正、安定平和的社会环境。"
             }
             
         ]
