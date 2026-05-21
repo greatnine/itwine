@@ -112,7 +112,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 h2 {
   color: #fff;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: 30px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
@@ -1268,13 +1268,16 @@ h2 {
 &lt;/blockquote&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="PassageFooter" tags="nobr" position="500,0" size="100,100">&lt;div class=&quot;footer&quot;&gt;
   &lt;p style=&quot;text-align: center; color: #999; font-size: 0.85em; margin-top: 30px;&quot;&gt;
+  
   欢迎！本微小说第&lt;&lt;= $readCount &gt;&gt;次被阅读。
 &lt;&lt;if $readCount is 1&gt;&gt;
     这是您第一次打开这个故事。
 &lt;&lt;elseif $readCount gte 5&gt;&gt;
     您是忠实读者！
 &lt;&lt;/if&gt;&gt;
-北京39街区传媒工作室 | 2026年5月制作  版权所有©微信公众号 · 花园山文苑
+
+&lt;br&gt;北京39街区传媒工作室 || 2026年5月制作
+&lt;br&gt; 版权所有©微信公众号 · 花园山文苑
 &lt;/p&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="PassageHeader" tags="nobr" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="Start" tags="nobr" position="300,200" size="100,100">&lt;div class=&quot;story-container&quot;&gt;
     &lt;h2&gt;&lt;&lt;= Story.get(&quot;StoryDisplayTitle&quot;).text&gt;&gt;&lt;/h2&gt;    
@@ -1284,19 +1287,17 @@ h2 {
     /* 动态加载故事内容 */
     &lt;&lt;include $currentPassageName&gt;&gt;   
     &lt;center&gt;&lt;img src=&quot;images/0.png&quot; alt=&quot;&quot;  margin= &quot;auto&quot;&gt;&lt;/center&gt;
-  &lt;hr&gt;
-  &lt;div&gt;        
+  &lt;hr&gt;   
         &lt;p style=&quot;text-align: left; color: #999; font-size: 0.85em; &quot;&gt;
 　　如果你听说过五十年前发生在花园山的敌特事件导致的冤案，知道其真相和来龙去脉，尤其了解掌握更为荒诞离奇的细节，欢迎你投稿或提供该事件的经过和详情。一经采用会将你的故事增添到《花园山敌特案侦破记》故事大接龙。这是编号&lt;&lt;= $currentIndex + 1&gt;&gt;的版本。你已经读过 &lt;&lt;= recall(&#39;readStories&#39;, []).length&gt;&gt; / &lt;&lt;= $storyPassages.length&gt;&gt; 个故事。&lt;br&gt;
 　　但需注意，我们只是还原特定年代混乱时期的错误乱象，使人铭记历史教训，珍惜当下法治公正、安定平和的社会环境。国家强盛、民族复兴伟业的道路绝非一帆风顺，坚决抵制对特定年代肆意歪曲与恶意抹黑的行为。&lt;br&gt;
 　　投稿信箱qijiuzhu@tsinghua.org.cn或加微信aldrich_tsee联系。
       &lt;/p&gt;
   &lt;/div&gt;
+  &lt;p style=&quot;text-align: center; font-size: 0.9em; &quot;&gt;退出重新打开浏览器，会看到本小说不同版本。&lt;/p&gt;
   &lt;/div&gt;
   
-  &lt;div class=&quot;story-info&quot;&gt;
-    &lt;p&gt;关闭阅读退出浏览，重新在浏览器中打开，将会看到不同版本的《&lt;&lt;= Story.get(&quot;StoryDisplayTitle&quot;).text&gt;&gt;》。&lt;/p&gt;
-  &lt;/div&gt;  
+  
   
   /*&lt;div class=&quot;actions&quot;&gt;
     &lt;&lt;link &quot;重置所有记录&quot;&gt;&gt;
@@ -1304,12 +1305,16 @@ h2 {
       &lt;&lt;run forget（&#39;currentStoryIndex&#39;）&gt;&gt;
       &lt;&lt;run Engine。restart（）&gt;&gt;
     &lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;*/
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="StoryAuthor" tags="" position="0,400" size="100,100">传习者戚</tw-passagedata><tw-passagedata pid="17" name="StoryCaption" tags="" position="0,500" size="100,100">qijiuzhu@Tsinghua.org.cn</tw-passagedata><tw-passagedata pid="18" name="StoryDisplayTitle" tags="" position="0,300" size="100,100">花园山敌特案侦破记</tw-passagedata><tw-passagedata pid="19" name="StoryInit" tags="" position="100,100" size="100,100">/* 内置菜单禁用功能 */
+  &lt;/div&gt;*/</tw-passagedata><tw-passagedata pid="16" name="StoryAuthor" tags="" position="0,400" size="100,100">传习者戚</tw-passagedata><tw-passagedata pid="17" name="StoryCaption" tags="" position="0,500" size="100,100">qijiuzhu@Tsinghua.org.cn</tw-passagedata><tw-passagedata pid="18" name="StoryDisplayTitle" tags="" position="0,300" size="100,100">花园山敌特案侦破记</tw-passagedata><tw-passagedata pid="19" name="StoryInit" tags="" position="100,100" size="100,100">/* 内置菜单禁用功能 */
 &lt;&lt;script&gt;&gt;
     //Config.saves.isAllowed = null; //去掉保存功能
     UIBar.stow();//(隐藏UI 栏）    
     //UIBar.hide();  //去掉内置菜单
+
+    /* 点击页面任意处隐藏内置菜单 */
+    $(document).on(&#39;click&#39;, function (ev) {
+    if (!$(ev.target).closest(&#39;#ui-bar&#39;).length) UIBar.stow(); });
+
     //重新开始
     l10nStrings.restartTitle = &#39;重新开始&#39;; // 内置菜单&quot;RESTART&quot;
     l10nStrings.restartMesgPrompt = &#39;所有未保存的进度都将丢失。确定要重新开始吗？&#39;;
