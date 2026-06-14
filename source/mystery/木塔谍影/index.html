@@ -104,7 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Wooden Tower (Light_Dark template)" startnode="3" creator="Twine" creator-version="2.12.0" format="SugarCube" format-version="2.37.3" ifid="42CA986F-5FE0-4892-B111-81875F57EBAC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+	<tw-storydata name="Wooden Tower (Light_Dark template)" startnode="3" creator="Twine" creator-version="2.12.0" format="SugarCube" format-version="2.37.3" ifid="42CA986F-5FE0-4892-B111-81875F57EBAC" options="" tags="发布 互动小说" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
 :root{
     --font1: Verdana, Geneva, Tahoma, sans-serif;
     --fonte2: 'Passion One', cursive;
@@ -116,40 +116,23 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 @import url(' https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 /*#story { font-family: 'Merriweather', serif; }报纸体*/
 
+/* 楷体 */
+h3 {
+  font-family: var(--fonte2);   /*楷体*/
+  text-align: center;
+}
+
+
 /* 极简字体放大方案 */
 #story {
     font-size: 1.2em; /* 增大基础字体大小 */
     font-family: 'Merriweather', serif;    /*报纸体*/
     line-height: 1.7; /* 增加行高，使大字体更易阅读 */
-    /*margin: 1em 0; 调整段落间距以适应大字体 */   
-}
-
-/*页面正文*/
-.passage * {
-   margin:0px 0px !important;  /* 左右各0px边距*/
-   white-space: normal !important; /*强制所有文本自动换行 */
-}
-
-/*页面选项链接*/
-.passage a { 
-    line-height: 2.5;   /* 链接所在段落的行距 */
-    font-family: var(--fonte2), cursive;    /*楷体*/
-    font-size: 1.0em;  /*    段落字体在基础大小上再略微放大*/
-    color: CornflowerBlue ; 
-}
-.passage a:hover { color: pink; }
-
-
-/* 重置 CSS4浅色/深色模式4 */
-:root {
-    --bg: #f8f9fa;            /* 浅灰（纯色，无透明） */
-    --text: #212529;          /* 深灰 */
-    --ui-bar-border: #e2e3e6; /* 侧边栏边框色 */
-}
-.dark-mode {
-    --bg: #212529;            /* 深灰（纯色，无透明） */
-    --text: #f8f9fa;  
-    --ui-bar-border: #495057; /* 暗黑模式边框色 */
+    /*margin: 1em 0; 调整段落间距以适应大字体 */      
+    /*    
+    font-family: var(--fonte2);       
+    font-family: var(--font1);   /* 黑体*/
+    */
 }
 
 body { 
@@ -162,6 +145,44 @@ body {
 .passage { 
   background: var(--bg) !important; 
   color: var(--text) !important;
+}
+
+
+
+/*页面正文*/
+
+.passage * {
+   margin:0px 0px !important;  /* 左右各0px边距*/
+   white-space: normal !important; /*强制所有文本自动换行 */
+    
+}
+
+/*页面选项链接*/
+.passage a { 
+    display: block;       
+    text-align: center;        
+    line-height: 1em;      		/* 链接所在段落的行距 */
+    /*font-size: 1.0em;  */		/* 段落字体在基础大小上再略微放大*/
+    color: CornflowerBlue ; 
+    transition: all 0.2s;			/* 过渡动画 */
+}
+
+.passage a:hover { 
+    color: pink;
+    transform: translateX(6px);
+ }
+
+
+/* 重置 CSS4浅色/深色模式4 */
+:root {
+    --bg: #f8f9fa;            /* 浅灰（纯色，无透明） */
+    --text: #212529;          /* 深灰 */
+    --ui-bar-border: #e2e3e6; /* 侧边栏边框色 */
+}
+.dark-mode {
+    --bg: #212529;            /* 深灰（纯色，无透明） */
+    --text: #f8f9fa;  
+    --ui-bar-border: #495057; /* 暗黑模式边框色 */
 }
 
 #ui-bar {                      /*侧边菜单*/  
@@ -309,8 +330,11 @@ l10nStrings.uiBarLabelForward = '在{textIdentity}历史记录中前进';
 &lt;/div&gt; </tw-passagedata><tw-passagedata pid="3" name="Start" tags="" position="25,25" size="100,100">&lt;nobr&gt;
 &lt;&lt;set $title to either(&quot;木塔谍影记&quot;, &quot;木 塔 谍 影&quot;, &quot;木塔谍影——国宝护卫战&quot;)&gt;&gt;
 &lt;center&gt;&lt;img src=&quot;images/wooden2.png&quot; alt=&quot;&quot;  style=&quot;margin: auto;&quot;&gt;&lt;/center&gt;
+&lt;!--
 &lt;h3 style=&quot;font-family: var(--fonte2); text-align: center;&quot;&gt;&lt;&lt;= $title&gt;&gt;&lt;/h3&gt;
-&lt;nobr&gt;
+--&gt;
+&lt;h3&gt;&lt;&lt;= $title&gt;&gt;&lt;/h3&gt;
+&lt;/nobr&gt;
 &lt;nobr&gt;&lt;&lt;=either(
 &quot;故事的帷幕，从这里缓缓拉开&quot;, 
 &quot;这是一个关于选择的故事。你的每一次抉择，都将改写命运的轨迹&quot;, 
@@ -353,13 +377,22 @@ l10nStrings.uiBarLabelForward = '在{textIdentity}历史记录中前进';
 &lt;&lt;/link&gt;&gt;
 
 &lt;&lt;nobr&gt;&gt;
-&lt;div id=&quot;menu&quot;&gt;&lt;ul&gt;&lt;li&gt;
+&lt;div id=&quot;menu&quot;&gt;
+&lt;ul&gt;&lt;li&gt;
     &lt;&lt;link &quot;🌙☀️&quot;&gt;&gt;
-    &lt;&lt;run document.documentElement.classList.toggle(&#39;dark-mode&#39;); UIBar.stow()&gt;&gt;
+        &lt;&lt;run 
+            /*切换 dark-mode 类*/ 
+            document.documentElement.classList.toggle(&#39;dark-mode&#39;); 
+            /*保存当前主题状态到 localStorage*/
+            const isDark = document.documentElement.classList.contains(&#39;dark-mode&#39;);
+            localStorage.setItem(&#39;story-theme&#39;, isDark ? &#39;dark&#39; : &#39;light&#39;); 
+            /*收起侧边栏*/
+            UIBar.stow();
+        &gt;&gt;
     &lt;&lt;/link&gt;&gt;
-&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
-
 </tw-passagedata><tw-passagedata pid="6" name="StoryDisplayTitle" tags="" position="0,600" size="100,100">木塔谍影</tw-passagedata><tw-passagedata pid="7" name="StoryInit" tags="" position="200,1000" size="100,100">&lt;&lt;script&gt;&gt;
     //UIBar.hide();  //隐藏 UI 栏（内置菜单所在位置）
      UIBar.stow();
@@ -368,6 +401,26 @@ l10nStrings.uiBarLabelForward = '在{textIdentity}历史记录中前进';
         if (!$(ev.target).closest(&#39;#ui-bar&#39;).length) UIBar.stow();
     }); 
 &lt;&lt;/script&gt;&gt;
+
+
+&lt;&lt;script&gt;&gt;
+    // 页面加载时恢复主题设置
+    (function() {
+        var savedTheme = localStorage.getItem(&#39;story-theme&#39;);        
+        if (savedTheme === &#39;dark&#39;) {
+            document.documentElement.classList.add(&#39;dark-mode&#39;);
+        } else if (savedTheme === &#39;light&#39;) {
+            document.documentElement.classList.remove(&#39;dark-mode&#39;);
+        } else {
+            // 首次访问，默认跟随系统偏好
+            if (window.matchMedia &amp;&amp; window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches) {
+                document.documentElement.classList.add(&#39;dark-mode&#39;);
+                localStorage.setItem(&#39;story-theme&#39;, &#39;dark&#39;);
+            }
+        }
+    })();
+&lt;&lt;/script&gt;&gt;
+
 
 &lt;!--&lt;&lt;link &quot;返回&quot;&gt;&gt;&lt;&lt;backToPassage&gt;&gt;&lt;&lt;/link&gt;&gt;--&gt;
 &lt;&lt;widget &quot;backToPassage&quot;&gt;&gt;
